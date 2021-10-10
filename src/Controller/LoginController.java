@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
  */
 public class LoginController implements ActionListener{
     private NavigationController navCntrl;
+    private AdminNavigationController adminNavCntrl;
     private loginPage loginUI;
     private LoginController loginCntrl;
 
@@ -20,6 +21,7 @@ public class LoginController implements ActionListener{
     public LoginController() {
         loginUI = new loginPage(this);
         loginUI.loginButton.addActionListener(this);
+        loginUI.adminLogin.addActionListener(this);
         loginUI.setVisible(true);
      };
     
@@ -27,12 +29,16 @@ public class LoginController implements ActionListener{
      * Action Events for buttons
      * @param e representing an Action Event
      */
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
         if(obj == loginUI.loginButton)
         {
             navCntrl = new NavigationController();
+            loginUI.setVisible(false);
+        } else if (obj == loginUI.adminLogin) {
+            adminNavCntrl = new AdminNavigationController();
             loginUI.setVisible(false);
         }
     }
