@@ -11,7 +11,7 @@ import Model.Restaurants;
  */
 public class RestaurantOrderUI extends javax.swing.JFrame {
     private RestaurantMenuUI menuUI = new RestaurantMenuUI(new RestaurantController(new NavigationController()), new Restaurants());
-
+    private RestaurantOrderController orderCntrl;
     /**
      * Creates new form RestaurantOrderUI
      * @param restCntrl references the Restaurant Order Controller class
@@ -19,15 +19,25 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
      */
     public RestaurantOrderUI(RestaurantOrderController restCntrl, Restaurants restaurant) {
         initComponents();
-        setOrderTotal();
+        //setOrderTotal();
+    }
+    
+    /**
+     * Method to connect to our RestaurantOrderController
+     * @param orderController a view order
+     * @return the connection status
+     */   
+    public boolean connectedRestServer(RestaurantOrderController orderController) {
+         orderCntrl = orderController;
+        return true;
     }
     
     /**
      * sets the order total text box with the order total value
      */
-    public void setOrderTotal() {
-        orderTotalAmt.setText(String.valueOf(menuUI.getOrderTotal()));
-    }
+//    public void setOrderTotal() {
+//        orderTotalAmt.setText(String.valueOf(menuUI.getOrderTotal()));
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.

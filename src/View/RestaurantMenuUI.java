@@ -24,10 +24,20 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
     }
     
     /**
+     * Method to connect to our RestaurantController
+     * @param restController a menu
+     * @return the connection status
+     */   
+    public boolean connectedRestServer(RestaurantController restController) {
+        restCntrl = restController;
+        return true;
+    }
+    
+    /**
      * gets the order total from the user's entry
      * @return total which represents the order amount
      */
-    public double getOrderTotal() {
+    private double getOrderTotal() {
         double total = Double.parseDouble(menuItemPrice1.getText()) * (Integer)menuItemAmt1.getValue()
                 + Double.parseDouble(menuItemPrice2.getText()) * (Integer)menuItemAmt2.getValue()
                 + Double.parseDouble(menuItemPrice3.getText()) * (Integer)menuItemAmt3.getValue()
@@ -35,7 +45,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
                 + Double.parseDouble(menuItemPrice5.getText()) * (Integer)menuItemAmt5.getValue()
                 + Double.parseDouble(menuItemPrice6.getText()) * (Integer)menuItemAmt6.getValue()
                 + Double.parseDouble(menuItemPrice7.getText()) * (Integer)menuItemAmt7.getValue();
-        System.out.println((Integer)menuItemAmt1.getValue());
+        //System.out.println((Integer)menuItemAmt1.getValue());
         return total;
     }
     

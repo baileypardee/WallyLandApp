@@ -31,6 +31,16 @@ public class RestaurantController implements ActionListener {
     }
     
     /**
+     * Method to 'connect' to our user
+     * @param menuInterface a user interface which can view the menu
+     * @return the connection status
+     */    
+    public boolean connectedUserClient(RestaurantMenuUI menuInterface) {
+        menuUI = menuInterface;
+        return true;
+    }
+    
+    /**
      * Action Events for buttons
      * @param e representing an Action Event
      */

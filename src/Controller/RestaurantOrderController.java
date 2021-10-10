@@ -30,6 +30,16 @@ public class RestaurantOrderController implements ActionListener{
     }
     
     /**
+     * Method to 'connect' to our user
+     * @param orderInterface a user interface which can place an order
+     * @return the connection status
+     */    
+    public boolean connectedUserClient(RestaurantOrderUI orderInterface) {
+        orderUI = orderInterface;
+        return true;
+    }
+    
+    /**
      * Action Events for buttons
      * @param e represents an Action Event
      */
