@@ -29,6 +29,16 @@ public class NavigationController implements ActionListener {
     }
     
     /**
+     * Method to 'connect' to our user
+     * @param navInterface a user interface which can view the main menu
+     * @return the connection status
+     */    
+    public boolean connectedUserClient(NavigationUI navInterface) {
+        navigationUI = navInterface;
+        return true;
+    }
+    
+    /**
      * Action events for buttons
      * @param e represents an Action Event
      */
