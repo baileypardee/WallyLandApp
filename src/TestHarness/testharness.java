@@ -31,6 +31,21 @@ public class testharness {
         restTest.NUITestStubs();
         System.out.println("...Navigation End -> Finished Running All Navigation Tests");
         
+      
+        //Activity Tests 
+        System.out.println("Running Test Stubs for Activity Class");
+        ActivityTestHarness activityTest = new ActivityTestHarness();
+        //Activity Model Class Test
+        activityTest.testModelActivity();
+        
+        
+        //Admin Navigation Tests 
+        System.out.println("Running Test Stubs for Admin Navigation...");
+        //AdminNavigationController Test Stubs 
+        activityTest.ACTestStubs();
+        //AdminNavaigationUI Test Stubs 
+        activityTest.ANUITestStubs();
+        
         
         
     }
