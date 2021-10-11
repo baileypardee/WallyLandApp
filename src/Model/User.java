@@ -28,6 +28,16 @@ public class User {
         this.lastName = lastName;
         this.password = password;
     }
+    
+    /**
+     * Empty Constructor User
+     */
+    public User() {
+        this.email = "";
+        this.firstName = "";
+        this.lastName = "";
+        this.password = "";
+    }
 
     /**
      * getter for email

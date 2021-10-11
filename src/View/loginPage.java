@@ -22,6 +22,16 @@ public class loginPage extends javax.swing.JFrame {
         this.loginCntrl = loginCntrl;
         initComponents();
     }
+    
+    /**
+     * Method to connect to our LoginController
+     * @param loginController a login screen
+     * @return the connection status
+     */   
+    public boolean connectedRestServer(LoginController loginController) {
+        loginCntrl = loginController;
+        return true;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -64,7 +64,6 @@ public class RestaurantTestHarness {
             System.out.println("  NavigationUI.connectRestServer output: " + boolStatus);
        }
        
-       
        // Package -> Model -> Restaurants
        public void RTestStubs() {
            System.out.println("  Testing Restaurant Class -> setRestaurantName with 'Food Court'");
@@ -85,7 +84,5 @@ public class RestaurantTestHarness {
            
            System.out.println("  Testing Restaurant Class -> toString: " + restaurant.toString());
        }
-       
-       
-    
+
 }
