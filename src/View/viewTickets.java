@@ -5,6 +5,8 @@
  */
 package View;
 
+import Controller.purchaseTicketsController;
+
 /**
  *
  * @author hayde
@@ -137,4 +139,8 @@ public class viewTickets extends javax.swing.JFrame {
     public javax.swing.JButton printTicketsButton;
     public javax.swing.JButton purchaseTicketsButton;
     // End of variables declaration//GEN-END:variables
+
+    public boolean connectedRestServer(purchaseTicketsController purCntl) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

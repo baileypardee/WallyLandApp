@@ -5,13 +5,23 @@ package Model;
  * @author hayde
  */
 public class purchaseModel {
-     
+    private double price;
+
+    
+    public double getPrice(){
+        return price;
+    }
+
     /**
-     * will verify purchase with either a database for 3rd party
+     * will verify purchase with either a database for 3rd party\
+     * @param price is price of tickets
      */
-    public static void handlePurchases(){
-            
-        
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public static void handlePurchases(double price) {
+        System.out.println(price);
     }
     
     /**

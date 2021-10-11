@@ -28,6 +28,10 @@ public class viewTicketsController implements ActionListener{//will grab tickets
         viewTicketsUI.purchaseTicketsButton.addActionListener(this);
         viewTicketsUI.setVisible(true);
     }
+
+    public viewTicketsController() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     /**
      * Action Events for buttons
@@ -46,6 +50,10 @@ public class viewTicketsController implements ActionListener{//will grab tickets
             navCntrl = new NavigationController();
             viewTicketsUI.setVisible(false);
         }
+    }
+
+    public boolean connectedUserClient(viewTickets viewUI) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
