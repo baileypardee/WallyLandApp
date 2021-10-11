@@ -21,7 +21,7 @@ public class testharness {
         restTest.ROUITestStubs();
         // Restaurant Test Stubs
         restTest.RTestStubs();
-        System.out.println("...Restaurant End -> Finsihed Running All Restaurant Tests");
+        
         
         //Navigation Tests
         System.out.println("Running Test Stubs for Navigation...");
@@ -29,9 +29,8 @@ public class testharness {
         restTest.NCTestStubs();
         // NavigationUI Test Stubs
         restTest.NUITestStubs();
-        System.out.println("...Navigation End -> Finished Running All Navigation Tests");
-        
       
+        
         //Activity Tests 
         System.out.println("Running Test Stubs for Activity Class");
         ActivityTestHarness activityTest = new ActivityTestHarness();
@@ -47,7 +46,26 @@ public class testharness {
         activityTest.ANUITestStubs();
         
         
+        // User Tests
+        LoginTestHarness loginTest = new LoginTestHarness();
+        System.out.println("Running Test Stubs for User Class...");
+        loginTest.UserTests();
         
+        
+        // Login Tests
+        System.out.println("Running Test Stubs for Login...");
+        // LoginController Tests
+        loginTest.LCTestStubs();
+        // Login
+        loginTest.LPTestStubs();
+        
+        
+        // Reservation Tests
+        System.out.println("Running Test Stubs for Registration...");
+        ReservationTestHarness resTest = new ReservationTestHarness();
+        resTest.ResTestStubs();
+        
+        System.out.println("End All Tests");
     }
     
 }

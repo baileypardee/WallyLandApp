@@ -26,6 +26,16 @@ public class LoginController implements ActionListener{
      };
     
     /**
+     * Method to 'connect' to our user
+     * @param loginInterface a user interface which can view the login
+     * @return the connection status
+     */    
+    public boolean connectedUserClient(loginPage loginInterface) {
+        loginUI = loginInterface;
+        return true;
+    }
+    
+    /**
      * Action Events for buttons
      * @param e representing an Action Event
      */
