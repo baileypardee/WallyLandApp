@@ -13,6 +13,10 @@ public class purchaseTicketsController implements ActionListener {
     private viewTicketsController viewTix;
     private NavigationController navCntrl;
 
+    public purchaseTicketsController() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * getter for purchased tickets
      * @return (gets purchased tickets)
@@ -75,6 +79,10 @@ public class purchaseTicketsController implements ActionListener {
             purchaseTix.setVisible(false);
         }
         
+    }
+
+    public boolean connectedUserClient(purchaseTickets purchaseUI) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
