@@ -1,5 +1,6 @@
 # WallyLandApp
 
+HIGHLY RECCOMEND USING TERMINAL & NOT NETBEANS TO USE GIT 
 
 Steps to start:
 
