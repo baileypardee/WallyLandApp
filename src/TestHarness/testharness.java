@@ -65,6 +65,21 @@ public class testharness {
         ReservationTestHarness resTest = new ReservationTestHarness();
         resTest.ResTestStubs();
         
+        // Purchasing Tickets Tests
+        System.out.println("Running Test Stubs for Purchasing Tickets...");
+        PurchasingTestHarness purchaseTest = new PurchasingTestHarness();
+        // PurchaseTicketsController tests
+        purchaseTest.PTTestStubs();
+        // ViewTicketsController tests
+        purchaseTest.VTTestStubs();
+        // View tickets UI tests
+        purchaseTest.PTUITestStubs();
+        // purchase tickets UI tests
+        purchaseTest.VTITestStubs();
+        // model tests
+        purchaseTest.VMTestStubs();
+        purchaseTest.PMTestStubs();
+        
         System.out.println("End All Tests");
     }
     
