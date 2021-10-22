@@ -14,7 +14,7 @@ public class RestaurantOrderController implements ActionListener{
     private NavigationController navCntrl;
     private Restaurants restaurant;
     private RestaurantOrderUI orderUI;
-    private RestaurantController menuCntlr;
+    private RestaurantController menuCntrl;
     
     /**
      * Constructor for the restaurant ordering
@@ -23,10 +23,19 @@ public class RestaurantOrderController implements ActionListener{
     public RestaurantOrderController(RestaurantController restCntrl) {
         this.navCntrl = navCntrl;
         restaurant = new Restaurants();
+        menuCntrl = restCntrl;
         orderUI = new RestaurantOrderUI(this, restaurant);
         orderUI.backBtn.addActionListener(this);
         orderUI.orderBtn.addActionListener(this);
         orderUI.setVisible(true);
+        setOrderTotal();
+    }
+    
+    /**
+     * sets order total
+     */
+    public void setOrderTotal(){
+        orderUI.setOrderTotalAmt(menuCntrl.getMenuItemAmts());
     }
     
     /**
@@ -48,7 +57,7 @@ public class RestaurantOrderController implements ActionListener{
         Object obj = e.getSource();
         if(obj == orderUI.backBtn)
         {
-            menuCntlr = new RestaurantController(navCntrl);
+            menuCntrl = new RestaurantController(navCntrl);
             orderUI.setVisible(false);
         }
         if(obj == orderUI.orderBtn)
