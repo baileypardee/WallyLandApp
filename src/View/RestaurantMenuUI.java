@@ -2,7 +2,9 @@ package View;
 
 import Controller.RestaurantController;
 import Model.Restaurants;
+import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JSpinner;
 
 /**
@@ -11,7 +13,8 @@ import javax.swing.JSpinner;
  */
 public class RestaurantMenuUI extends javax.swing.JFrame {
     private RestaurantController restCntrl;
-    private Restaurants restuarant;
+    private Restaurants restaurant;
+    private RestaurantMenuUI menuUI;
     /**
      * Creates new form RestaurantMenuUI
      * @param restCntrl references the Restaurant Controller class
@@ -19,8 +22,13 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
      */
     public RestaurantMenuUI(RestaurantController restCntrl, Restaurants restaurant) {
         this.restCntrl = restCntrl;
-        this.restuarant = restaurant;
+        this.restaurant = restaurant;
         initComponents();
+        progressBar = new javax.swing.JProgressBar(0, 100);
+        jPanel2.add(progressBar);
+        progressBar.setSize(350,40);
+        progressBar.setValue(2);
+        progressBar.setVisible(true);
     }
     
     /**
@@ -32,23 +40,303 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
         restCntrl = restController;
         return true;
     }
-    
+
     /**
-     * gets the order total from the user's entry
-     * @return total which represents the order amount
+     * getter for menu item 1 label
+     * @return JLabel menuItem1
      */
-    private double getOrderTotal() {
-        double total = Double.parseDouble(menuItemPrice1.getText()) * (Integer)menuItemAmt1.getValue()
-                + Double.parseDouble(menuItemPrice2.getText()) * (Integer)menuItemAmt2.getValue()
-                + Double.parseDouble(menuItemPrice3.getText()) * (Integer)menuItemAmt3.getValue()
-                + Double.parseDouble(menuItemPrice4.getText()) * (Integer)menuItemAmt4.getValue()
-                + Double.parseDouble(menuItemPrice5.getText()) * (Integer)menuItemAmt5.getValue()
-                + Double.parseDouble(menuItemPrice6.getText()) * (Integer)menuItemAmt6.getValue()
-                + Double.parseDouble(menuItemPrice7.getText()) * (Integer)menuItemAmt7.getValue();
-        //System.out.println((Integer)menuItemAmt1.getValue());
-        return total;
+    public JLabel getMenuItem1() {
+        return menuItem1;
     }
-    
+
+    /**
+     * setter for menu item 1
+     * @param menuItem1 JLabel for menu item 1
+     */
+    public void setMenuItem1(String menuItem1) {
+        this.menuItem1.setText(menuItem1);
+    }
+
+    /**
+     * getter for menu item 2 label
+     * @return JLabel menuItem2
+     */
+    public JLabel getMenuItem2() {
+        return menuItem2;
+    }
+
+    /**
+     * setter for menu item 2
+     * @param menuItem1 JLabel for menu item 2
+     */
+    public void setMenuItem2(String menuItem2) {
+        this.menuItem2.setText(menuItem2);
+    }
+
+    /**
+     * getter for menu item 3 label
+     * @return JLabel menuItem3
+     */
+    public JLabel getMenuItem3() {
+        return menuItem3;
+    }
+
+    /**
+     * setter for menu item 3
+     * @param menuItem1 JLabel for menu item 3
+     */
+    public void setMenuItem3(String menuItem3) {
+        this.menuItem3.setText(menuItem3);
+    }
+
+    /**
+     * getter for menu item 4 label
+     * @return JLabel menuItem4
+     */
+    public JLabel getMenuItem4() {
+        return menuItem4;
+    }
+
+    /**
+     * setter for menu item 4
+     * @param menuItem1 JLabel for menu item 4
+     */
+    public void setMenuItem4(String menuItem4) {
+        this.menuItem4.setText(menuItem4);
+    }
+
+    /**
+     * getter for menu item 5 label
+     * @return JLabel menuItem5
+     */
+    public JLabel getMenuItem5() {
+        return menuItem5;
+    }
+
+    /**
+     * setter for menu item 5
+     * @param menuItem1 JLabel for menu item 5
+     */
+    public void setMenuItem5(String menuItem5) {
+        this.menuItem5.setText(menuItem5);
+    }
+
+    /**
+     * getter for menu item 6 label
+     * @return JLabel menuItem6
+     */
+    public JLabel getMenuItem6() {
+        return menuItem6;
+    }
+
+    /**
+     * setter for menu item 6
+     * @param menuItem1 JLabel for menu item 6
+     */
+    public void setMenuItem6(String menuItem6) {
+        this.menuItem6.setText(menuItem6);
+    }
+
+    /**
+     * getter for menu item 7 label
+     * @return JLabel menuItem7
+     */
+    public JLabel getMenuItem7() {
+        return menuItem7;
+    }
+
+    /**
+     * setter for menu item 7
+     * @param menuItem1 JLabel for menu item 7
+     */
+    public void setMenuItem7(String menuItem7) {
+        this.menuItem7.setText(menuItem7);
+    }
+
+    public JSpinner getMenuItemAmt1() {
+        return menuItemAmt1;
+    }
+
+    public void setMenuItemAmt1(JSpinner menuItemAmt1) {
+        this.menuItemAmt1 = menuItemAmt1;
+    }
+
+    public JSpinner getMenuItemAmt2() {
+        return menuItemAmt2;
+    }
+
+    public void setMenuItemAmt2(JSpinner menuItemAmt2) {
+        this.menuItemAmt2 = menuItemAmt2;
+    }
+
+    public JSpinner getMenuItemAmt3() {
+        return menuItemAmt3;
+    }
+
+    public void setMenuItemAmt3(JSpinner menuItemAmt3) {
+        this.menuItemAmt3 = menuItemAmt3;
+    }
+
+    public JSpinner getMenuItemAmt4() {
+        return menuItemAmt4;
+    }
+
+    public void setMenuItemAmt4(JSpinner menuItemAmt4) {
+        this.menuItemAmt4 = menuItemAmt4;
+    }
+
+    public JSpinner getMenuItemAmt5() {
+        return menuItemAmt5;
+    }
+
+    public void setMenuItemAmt5(JSpinner menuItemAmt5) {
+        this.menuItemAmt5 = menuItemAmt5;
+    }
+
+    public JSpinner getMenuItemAmt6() {
+        return menuItemAmt6;
+    }
+
+    public void setMenuItemAmt6(JSpinner menuItemAmt6) {
+        this.menuItemAmt6 = menuItemAmt6;
+    }
+
+    public JSpinner getMenuItemAmt7() {
+        return menuItemAmt7;
+    }
+
+    public void setMenuItemAmt7(JSpinner menuItemAmt7) {
+        this.menuItemAmt7 = menuItemAmt7;
+    }
+
+    /**
+     * getter for menu item 1 price
+     * @return JLabel menuItemPrice1
+     */
+    public JLabel getMenuItemPrice1() {
+        return menuItemPrice1;
+    }
+
+    /**
+     * setter for menu item 1 price
+     * @param menuItemPrice1 JLabel for menuItemPrice1
+     */
+    public void setMenuItemPrice1(Double menuItemPrice1) {
+        this.menuItemPrice1.setText(String.format("%.2f", menuItemPrice1));
+    }
+
+    /**
+     * getter for menu item 2 price
+     * @return JLabel menuItemPrice2
+     */
+    public JLabel getMenuItemPrice2() {
+        return menuItemPrice2;
+    }
+
+    /**
+     * setter for menu item 2 price
+     * @param menuItemPrice2 JLabel for menuItemPrice2
+     */
+    public void setMenuItemPrice2(Double menuItemPrice2) {
+        this.menuItemPrice2.setText(String.format("%.2f", menuItemPrice2));
+    }
+
+    /**
+     * getter for menu item 3 price
+     * @return JLabel menuItemPrice3
+     */
+    public JLabel getMenuItemPrice3() {
+        return menuItemPrice3;
+    }
+
+    /**
+     * setter for menu item 3 price
+     * @param menuItemPrice3 JLabel for menuItemPrice3
+     */
+    public void setMenuItemPrice3(Double menuItemPrice3) {
+        this.menuItemPrice3.setText(String.format("%.2f", menuItemPrice3));
+    }
+
+    /**
+     * getter for menu item 4 price
+     * @return JLabel menuItemPrice4
+     */
+    public JLabel getMenuItemPrice4() {
+        return menuItemPrice4;
+    }
+
+    /**
+     * setter for menu item 4 price
+     * @param menuItemPrice4 JLabel for menuItemPrice4
+     */
+    public void setMenuItemPrice4(Double menuItemPrice4) {
+        this.menuItemPrice4.setText(String.format("%.2f", menuItemPrice4));
+    }
+
+    /**
+     * getter for menu item 5 price
+     * @return JLabel menuItemPrice5
+     */
+    public JLabel getMenuItemPrice5() {
+        return menuItemPrice5;
+    }
+
+    /**
+     * setter for menu item 5 price
+     * @param menuItemPrice5 JLabel for menuItemPrice5
+     */
+    public void setMenuItemPrice5(Double menuItemPrice5) {
+        this.menuItemPrice5.setText(String.format("%.2f", menuItemPrice5));
+    }
+
+    /**
+     * getter for menu item 6 price
+     * @return JLabel menuItemPrice6
+     */
+    public JLabel getMenuItemPrice6() {
+        return menuItemPrice6;
+    }
+
+    /**
+     * setter for menu item 6 price
+     * @param menuItemPrice6 JLabel for menuItemPrice6
+     */
+    public void setMenuItemPrice6(Double menuItemPrice6) {
+        this.menuItemPrice6.setText(String.format("%.2f", menuItemPrice6));
+    }
+
+    /**
+     * getter for menu item 7 price
+     * @return JLabel menuItemPrice7
+     */
+    public JLabel getMenuItemPrice7() {
+        return menuItemPrice7;
+    }
+
+    /**
+     * setter for menu item 7 price
+     * @param menuItemPrice7 JLabel for menuItemPrice7
+     */
+    public void setMenuItemPrice7(Double menuItemPrice7) {
+        this.menuItemPrice7.setText(String.format("%.2f", menuItemPrice7));
+    }
+
+    /**
+     * getter for menu title
+     * @return JLabel menuTitle
+     */
+    public JLabel getMenuTitle() {
+        return menuTitle;
+    }
+
+    /**
+     * setter for menu title
+     * @param title String for menu title
+     */
+    public void setMenuTitle(String title) {
+        this.menuTitle.setText(title);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,6 +346,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel1 = new javax.swing.JPanel();
         menuTitle = new javax.swing.JLabel();
         menuItem1 = new javax.swing.JLabel();
@@ -82,17 +371,29 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
         menuItemPrice5 = new javax.swing.JLabel();
         menuItemPrice6 = new javax.swing.JLabel();
         menuItemPrice7 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(238, 190, 122));
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 400));
 
         menuTitle.setBackground(new java.awt.Color(255, 255, 255));
         menuTitle.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        menuTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menuTitle.setText("Menu");
-
-        menuItem1.setText("Hamburger");
 
         menuItem2.setText("Cheeseburger");
 
@@ -122,53 +423,73 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
         menuItemPrice7.setText("4.99");
 
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 344, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 27, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(menuTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addComponent(reviewOrderBtn)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menuItem1)
-                    .addComponent(menuItem2)
-                    .addComponent(menuItem3)
-                    .addComponent(menuItem4)
-                    .addComponent(menuItem5)
-                    .addComponent(menuItem6)
-                    .addComponent(menuItem7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(menuItemPrice6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(menuItemAmt6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(menuItemPrice7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(menuItemAmt7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(menuItemPrice1)
-                            .addComponent(menuItemPrice2)
-                            .addComponent(menuItemPrice3)
-                            .addComponent(menuItemPrice4)
-                            .addComponent(menuItemPrice5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(menuItem1)
+                            .addComponent(menuItem2)
+                            .addComponent(menuItem3)
+                            .addComponent(menuItem4)
+                            .addComponent(menuItem5)
+                            .addComponent(menuItem6)
+                            .addComponent(menuItem7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(menuItemAmt5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(menuItemAmt4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(menuItemAmt3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(menuItemAmt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(menuItemAmt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(82, 82, 82))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(reviewOrderBtn)
-                .addGap(62, 195, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(menuTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(219, 219, 219))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(menuItemPrice6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(menuItemAmt6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(menuItemPrice7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(menuItemAmt7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(menuItemPrice1)
+                                    .addComponent(menuItemPrice2)
+                                    .addComponent(menuItemPrice3)
+                                    .addComponent(menuItemPrice4)
+                                    .addComponent(menuItemPrice5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(menuItemAmt5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(menuItemAmt4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(menuItemAmt3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(menuItemAmt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(menuItemAmt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(82, 82, 82))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,7 +531,9 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
                     .addComponent(menuItem7)
                     .addComponent(menuItemAmt7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(menuItemPrice7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(reviewOrderBtn)
                 .addGap(20, 20, 20))
         );
@@ -234,9 +557,11 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+    private javax.swing.JProgressBar progressBar;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel menuItem1;
     private javax.swing.JLabel menuItem2;
     private javax.swing.JLabel menuItem3;

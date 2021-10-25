@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/Controller/loginPageController.java</file>
             <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/Model/Reservation.java</file>
@@ -18,5 +19,8 @@
             <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/Model/Ticket.java</file>
             <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/Controller/RestaurantController.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> 57b5765bdf69f6502162a74668f9169f0277df11
     </open-files>
 </project-private>
