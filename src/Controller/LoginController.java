@@ -1,9 +1,12 @@
 package Controller;
-
-import View.NavigationUI;
-import View.loginPage;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import View.NavigationUI;
+import View.RegistrationUI;
+import View.loginPage;
+
 
 /**
  *
@@ -14,6 +17,8 @@ public class LoginController implements ActionListener{
     private AdminNavigationController adminNavCntrl;
     private loginPage loginUI;
     private LoginController loginCntrl;
+    private RegistrationController registraCntrl;
+
 
     /**
      * Constructor for login controller
@@ -22,6 +27,7 @@ public class LoginController implements ActionListener{
         loginUI = new loginPage(this);
         loginUI.loginButton.addActionListener(this);
         loginUI.adminLogin.addActionListener(this);
+        loginUI.signUpButtonL.addActionListener(this);
         loginUI.setVisible(true);
      };
     
@@ -51,6 +57,10 @@ public class LoginController implements ActionListener{
         } else if (obj == loginUI.adminLogin) {
             adminNavCntrl = new AdminNavigationController();
             loginUI.setVisible(false);
+        }else if (obj == loginUI.signUpButtonL){
+            registraCntrl = new RegistrationController();
+            loginUI.setVisible(false);
+            
         }
     }
 }
