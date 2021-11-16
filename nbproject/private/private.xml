@@ -2,6 +2,35 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/View/AdminNavigation.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/TestHarness/ReservationTestHarness.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/TestHarness/RestaurantTestHarness.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Model/Ticket.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Model/loginModel.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Model/adminModel.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/TestHarness/testharness.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Model/viewModel.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Model/Timeslot.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Model/Reservation.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Controller/AdminNavigationController.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/View/RestaurantMenuUI.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/View/RestaurantOrderUI.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/TestHarness/LoginTestHarness.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Model/Restaurants.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Model/User.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Model/purchaseModel.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/parkapp/ParkApp.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/View/purchaseTickets.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/View/NavigationUI.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/View/viewTickets.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/TestHarness/PurchasingTestHarness.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Model/viewTicketModel.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Controller/RestaurantController.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Controller/RestaurantOrderController.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/Model/Activity.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/TestHarness/ActivityTestHarness.java</file>
+            <file>file:/Users/bpardee/IST412/WallyLandApp/src/View/loginPage.java</file>
+        </group>
     </open-files>
 </project-private>

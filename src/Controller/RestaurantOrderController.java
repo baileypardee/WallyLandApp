@@ -3,8 +3,10 @@ package Controller;
 import Model.Restaurants;
 import View.RestaurantMenuUI;
 import View.RestaurantOrderUI;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JTextField;
 
 /**
  *
@@ -62,8 +64,27 @@ public class RestaurantOrderController implements ActionListener{
         }
         if(obj == orderUI.orderBtn)
         {
-            navCntrl = new NavigationController();
-            orderUI.setVisible(false);
+            boolean verified = true;
+            if(orderUI.getCardNumberValue().getText().equals("") || orderUI.getCardNumberValue().getText().equals("**Required**"))
+            {
+                orderUI.setCardNumberValue("**Required**");
+                verified = false;
+            }
+            if(orderUI.getCvvValue().getText().equals("") || orderUI.getCvvValue().getText().equals("**Required**"))
+            {
+                orderUI.setCvvValue("**Required**");
+                verified = false;
+            }
+            if(orderUI.getExpirationValue().getText().equals("") || orderUI.getExpirationValue().getText().equals("**Required**"))
+            {
+                orderUI.setExpirationValue("**Required**");
+                verified = false;
+            }
+            if(verified)
+            {
+                navCntrl = new NavigationController();
+                orderUI.setVisible(false);
+            }
         }
     }
     
