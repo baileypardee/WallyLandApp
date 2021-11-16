@@ -27,11 +27,12 @@ public class RestaurantController implements ActionListener {
     public RestaurantController(NavigationController navCntrl) {
         this.navCntrl = navCntrl;
         restaurant = new Restaurants("Park Restaurant", 
-                new ArrayList<String>(Arrays.asList("Food 1", "Food 2", "Food 3", "Food 4", "Food 5", "Food 6", "Food 7")),
-                new ArrayList<Double>(Arrays.asList(1.99, 2.99, 3.99, 4.99, 5.99, 6.99, 7.99)),
+                new ArrayList<String>(Arrays.asList("Hamburger", "Cheeseburger", "Mac and Cheese", "Hot Dog", "Pulled Pork", "Nachos", "French Fries")),
+                new ArrayList<Double>(Arrays.asList(4.99, 5.99, 4.99, 2.99, 5.99, 3.99, 2.99)),
                 20);
         menuUI = new RestaurantMenuUI(this, restaurant);
         menuUI.reviewOrderBtn.addActionListener(this);
+        menuUI.backBtn.addActionListener(this);
         menuUI.setVisible(true);
         setMenuValues();
     }
@@ -93,6 +94,10 @@ public class RestaurantController implements ActionListener {
         if(obj == menuUI.reviewOrderBtn)
         {
             orderCntrl = new RestaurantOrderController(this);
+            menuUI.setVisible(false);
+        }
+        if(obj == menuUI.backBtn) {
+            navCntrl = new NavigationController();
             menuUI.setVisible(false);
         }
     }
