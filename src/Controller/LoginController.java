@@ -18,7 +18,7 @@ public class LoginController implements ActionListener{
     private loginPage loginUI;
     private LoginController loginCntrl;
     private RegistrationController registraCntrl;
-
+    private boolean act;
 
     /**
      * Constructor for login controller
@@ -28,6 +28,7 @@ public class LoginController implements ActionListener{
         loginUI.loginButton.addActionListener(this);
         loginUI.adminLogin.addActionListener(this);
         loginUI.signUpButtonL.addActionListener(this);
+        act = true;
         loginUI.setVisible(true);
      };
     
@@ -40,6 +41,16 @@ public class LoginController implements ActionListener{
         loginUI = loginInterface;
         return true;
     }
+
+    public boolean isAct() {
+        return act;
+    }
+
+    public void setAct(boolean act) {
+        this.act = act;
+    }
+    
+    
     
     /**
      * Action Events for buttons
@@ -50,16 +61,18 @@ public class LoginController implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if(obj == loginUI.loginButton)
+        System.out.println(isAct());
+        if(obj == loginUI.loginButton && isAct())
         {
-            navCntrl = new NavigationController();
-            loginUI.setVisible(false);
+            System.out.println("test");
+           navCntrl = new NavigationController();
+           loginUI.setVisible(false);
         } else if (obj == loginUI.adminLogin) {
             adminNavCntrl = new AdminNavigationController();
             loginUI.setVisible(false);
-        }else if (obj == loginUI.signUpButtonL){
+       /* }else if (obj == loginUI.signUpButtonL){
             registraCntrl = new RegistrationController();
-            loginUI.setVisible(false);
+            loginUI.setVisible(false);*/
             
         }
     }
