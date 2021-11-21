@@ -10,6 +10,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 
 import Controller.LoginController;
+import Controller.NavigationController;
 import javax.swing.JOptionPane;
 import java.io.FileWriter;
 import java.io.FileReader;
@@ -21,6 +22,7 @@ import java.io.FileReader;
 public class loginPage extends javax.swing.JFrame {
 
     private LoginController loginCntrl;
+    private NavigationController navCntrl;
 
     /**
      * Creates new form viewTickets
@@ -146,6 +148,7 @@ public class loginPage extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
        JSONArray jrr = new JSONArray();
        JSONParser Jp = new JSONParser();
+
        Object ob = null;
        
       
@@ -172,7 +175,7 @@ public class loginPage extends javax.swing.JFrame {
        for(int i=0; i<size; i++){
        if(obj.equals(jrr.get(i))){
            JOptionPane.showMessageDialog(null, "Password Matched");
-           loginCntrl.setAct(true);
+            navCntrl = new NavigationController();
            break;   
        }else if(i==size-1){
            JOptionPane.showMessageDialog(null, "Wrong EmailAddress/Password!!");

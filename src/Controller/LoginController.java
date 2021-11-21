@@ -51,7 +51,6 @@ public class LoginController implements ActionListener{
     }
     
     
-    
     /**
      * Action Events for buttons
      * @param e representing an Action Event
@@ -62,12 +61,12 @@ public class LoginController implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
         System.out.println(isAct());
-        if(obj == loginUI.loginButton && isAct())
-        {
-            System.out.println("test");
-           navCntrl = new NavigationController();
-           loginUI.setVisible(false);
-        } else if (obj == loginUI.adminLogin) {
+/*        if(obj == loginUI.loginButton && isAct())
+//        {
+//            System.out.println("test");
+//           navCntrl = new NavigationController();
+//           loginUI.setVisible(false);
+        } else */if (obj == loginUI.adminLogin) {
             adminNavCntrl = new AdminNavigationController();
             loginUI.setVisible(false);
        /* }else if (obj == loginUI.signUpButtonL){
