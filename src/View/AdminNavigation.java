@@ -11,6 +11,7 @@ import Controller.AdminNavigationController;
  * @author meky
  */
 public class AdminNavigation extends javax.swing.JFrame {
+
     private AdminNavigationController adminNavCntrl;
 
     /**
@@ -23,12 +24,13 @@ public class AdminNavigation extends javax.swing.JFrame {
     public AdminNavigation(AdminNavigationController aThis) {
         initComponents(); //To change body of generated methods, choose Tools | Templates.
     }
-    
-        /**
+
+    /**
      * Method to connect to our NavigationController
+     *
      * @param navController a menu
      * @return the connection status
-     */   
+     */
     public boolean connectedRestServer(AdminNavigationController adminNavController) {
         adminNavCntrl = adminNavController;
         return true;

@@ -12,11 +12,14 @@ import javax.swing.JSpinner;
  * @author bpardee
  */
 public class RestaurantMenuUI extends javax.swing.JFrame {
+
     private RestaurantController restCntrl;
     private Restaurants restaurant;
     private RestaurantMenuUI menuUI;
+
     /**
      * Creates new form RestaurantMenuUI
+     *
      * @param restCntrl references the Restaurant Controller class
      * @param restaurant references the Restaurants class
      */
@@ -26,16 +29,17 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
         initComponents();
         progressBar = new javax.swing.JProgressBar(0, 100);
         jPanel2.add(progressBar);
-        progressBar.setSize(350,40);
+        progressBar.setSize(350, 40);
         progressBar.setValue(2);
         progressBar.setVisible(true);
     }
-    
+
     /**
      * Method to connect to our RestaurantController
+     *
      * @param restController a menu
      * @return the connection status
-     */   
+     */
     public boolean connectedRestServer(RestaurantController restController) {
         restCntrl = restController;
         return true;
@@ -43,6 +47,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 1 label
+     *
      * @return JLabel menuItem1
      */
     public JLabel getMenuItem1() {
@@ -51,6 +56,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 1
+     *
      * @param menuItem1 JLabel for menu item 1
      */
     public void setMenuItem1(String menuItem1) {
@@ -59,6 +65,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 2 label
+     *
      * @return JLabel menuItem2
      */
     public JLabel getMenuItem2() {
@@ -67,6 +74,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 2
+     *
      * @param menuItem1 JLabel for menu item 2
      */
     public void setMenuItem2(String menuItem2) {
@@ -75,6 +83,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 3 label
+     *
      * @return JLabel menuItem3
      */
     public JLabel getMenuItem3() {
@@ -83,6 +92,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 3
+     *
      * @param menuItem1 JLabel for menu item 3
      */
     public void setMenuItem3(String menuItem3) {
@@ -91,6 +101,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 4 label
+     *
      * @return JLabel menuItem4
      */
     public JLabel getMenuItem4() {
@@ -99,6 +110,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 4
+     *
      * @param menuItem1 JLabel for menu item 4
      */
     public void setMenuItem4(String menuItem4) {
@@ -107,6 +119,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 5 label
+     *
      * @return JLabel menuItem5
      */
     public JLabel getMenuItem5() {
@@ -115,6 +128,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 5
+     *
      * @param menuItem1 JLabel for menu item 5
      */
     public void setMenuItem5(String menuItem5) {
@@ -123,6 +137,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 6 label
+     *
      * @return JLabel menuItem6
      */
     public JLabel getMenuItem6() {
@@ -131,6 +146,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 6
+     *
      * @param menuItem1 JLabel for menu item 6
      */
     public void setMenuItem6(String menuItem6) {
@@ -139,6 +155,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 7 label
+     *
      * @return JLabel menuItem7
      */
     public JLabel getMenuItem7() {
@@ -147,6 +164,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 7
+     *
      * @param menuItem1 JLabel for menu item 7
      */
     public void setMenuItem7(String menuItem7) {
@@ -211,6 +229,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 1 price
+     *
      * @return JLabel menuItemPrice1
      */
     public JLabel getMenuItemPrice1() {
@@ -219,6 +238,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 1 price
+     *
      * @param menuItemPrice1 JLabel for menuItemPrice1
      */
     public void setMenuItemPrice1(Double menuItemPrice1) {
@@ -227,6 +247,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 2 price
+     *
      * @return JLabel menuItemPrice2
      */
     public JLabel getMenuItemPrice2() {
@@ -235,6 +256,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 2 price
+     *
      * @param menuItemPrice2 JLabel for menuItemPrice2
      */
     public void setMenuItemPrice2(Double menuItemPrice2) {
@@ -243,6 +265,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 3 price
+     *
      * @return JLabel menuItemPrice3
      */
     public JLabel getMenuItemPrice3() {
@@ -251,6 +274,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 3 price
+     *
      * @param menuItemPrice3 JLabel for menuItemPrice3
      */
     public void setMenuItemPrice3(Double menuItemPrice3) {
@@ -259,6 +283,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 4 price
+     *
      * @return JLabel menuItemPrice4
      */
     public JLabel getMenuItemPrice4() {
@@ -267,6 +292,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 4 price
+     *
      * @param menuItemPrice4 JLabel for menuItemPrice4
      */
     public void setMenuItemPrice4(Double menuItemPrice4) {
@@ -275,6 +301,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 5 price
+     *
      * @return JLabel menuItemPrice5
      */
     public JLabel getMenuItemPrice5() {
@@ -283,6 +310,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 5 price
+     *
      * @param menuItemPrice5 JLabel for menuItemPrice5
      */
     public void setMenuItemPrice5(Double menuItemPrice5) {
@@ -291,6 +319,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 6 price
+     *
      * @return JLabel menuItemPrice6
      */
     public JLabel getMenuItemPrice6() {
@@ -299,6 +328,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 6 price
+     *
      * @param menuItemPrice6 JLabel for menuItemPrice6
      */
     public void setMenuItemPrice6(Double menuItemPrice6) {
@@ -307,6 +337,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu item 7 price
+     *
      * @return JLabel menuItemPrice7
      */
     public JLabel getMenuItemPrice7() {
@@ -315,6 +346,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu item 7 price
+     *
      * @param menuItemPrice7 JLabel for menuItemPrice7
      */
     public void setMenuItemPrice7(Double menuItemPrice7) {
@@ -323,6 +355,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * getter for menu title
+     *
      * @return JLabel menuTitle
      */
     public JLabel getMenuTitle() {
@@ -331,6 +364,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     /**
      * setter for menu title
+     *
      * @param title String for menu title
      */
     public void setMenuTitle(String title) {

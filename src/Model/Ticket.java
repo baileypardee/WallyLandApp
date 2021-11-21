@@ -10,5 +10,5 @@ package Model;
  * @author Javod Fields
  */
 public class Ticket {
-    
+
 }

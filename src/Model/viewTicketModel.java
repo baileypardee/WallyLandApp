@@ -1,10 +1,13 @@
 package Model;
 
 /**
- * this will handle pulling up tickets from the database based on login information
+ * this will handle pulling up tickets from the database based on login
+ * information
+ *
  * @author hayde
  */
 public class viewTicketModel {
+
     private double ticketID;
     private double ticketPrice;
     private boolean hasPaid;
@@ -32,32 +35,32 @@ public class viewTicketModel {
     public void setHasPaid(boolean hasPaid) {
         this.hasPaid = hasPaid;
     }
-    
+
     /**
      * will get purchased tickets
+     *
      * @return a variable of User type
      */
-    public Ticket getPurchasedTickets(double ticketID, double ticketPrice, boolean hasPaid){
+    public Ticket getPurchasedTickets(double ticketID, double ticketPrice, boolean hasPaid) {
         Ticket boughtTicket = new Ticket();
         this.ticketID = ticketID;
         this.ticketPrice = ticketPrice;
         this.hasPaid = hasPaid;
-        
+
         return boughtTicket;
-            
-        
-    }
-    
-    /**
-     * sends info to controller to display purchased tickets
-     * @return a variable of Tickets type
-     */
-    public Ticket displayPurchasedTickets(double ticketID, boolean hasPaid){
-        Ticket ownedTicket = new Ticket();
-        
-        return ownedTicket;
-        
+
     }
 
+    /**
+     * sends info to controller to display purchased tickets
+     *
+     * @return a variable of Tickets type
+     */
+    public Ticket displayPurchasedTickets(double ticketID, boolean hasPaid) {
+        Ticket ownedTicket = new Ticket();
+
+        return ownedTicket;
+
+    }
 
 }

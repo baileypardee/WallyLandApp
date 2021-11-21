@@ -12,10 +12,13 @@ import javax.swing.JTextField;
  * @author bpardee
  */
 public class RestaurantOrderUI extends javax.swing.JFrame {
+
     private RestaurantMenuUI menuUI = new RestaurantMenuUI(new RestaurantController(new NavigationController()), new Restaurants());
     private RestaurantOrderController orderCntrl;
+
     /**
      * Creates new form RestaurantOrderUI
+     *
      * @param restCntrl references the Restaurant Order Controller class
      * @param restaurant references the Restaurant class
      */
@@ -23,23 +26,25 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
         initComponents();
         progressBar = new javax.swing.JProgressBar(0, 100);
         jPanel3.add(progressBar);
-        progressBar.setSize(380,30);
+        progressBar.setSize(380, 30);
         progressBar.setValue(50);
         progressBar.setVisible(true);
     }
-    
+
     /**
      * Method to connect to our RestaurantOrderController
+     *
      * @param orderController a view order
      * @return the connection status
-     */   
+     */
     public boolean connectedRestServer(RestaurantOrderController orderController) {
-         orderCntrl = orderController;
+        orderCntrl = orderController;
         return true;
     }
 
     /**
      * getter for order total
+     *
      * @return JTextField orderTotalAmt
      */
     public JLabel getOrderTotalAmt() {
@@ -48,6 +53,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * sets order total amount
+     *
      * @param orderTotal JLabel for order total
      */
     public void setOrderTotalAmt(String orderTotal) {
