@@ -17,13 +17,6 @@ public class NavigationUI extends javax.swing.JFrame {
         initComponents();
     }
 
-    NavigationUI() {
-        initComponents();
-    }
-
-  
-
-   
     /**
      * Method to connect to our NavigationController
      * @param navController a menu
