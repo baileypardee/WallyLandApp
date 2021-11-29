@@ -1,6 +1,5 @@
 package Controller;
 
-import Controller.loginPageController;
 import Controller.purchaseTicketsController;
 import Controller.viewTicketsController;
 import View.viewTickets;
