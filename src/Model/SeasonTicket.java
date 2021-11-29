@@ -10,9 +10,10 @@ package Model;
  * @author hayde
  */
 public class SeasonTicket extends Ticket {
+
+    public SeasonTicket(double price, boolean paid, int ID, String startDate, int daysActive) {
+        super(price, paid, ID, startDate, daysActive);
+    }
     
-    public SeasonTicket(){
-    super();
-}
-    
+ 
 }

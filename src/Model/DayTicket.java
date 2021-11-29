@@ -11,7 +11,7 @@ package Model;
  */
 public class DayTicket extends Ticket {
     
-    public DayTicket(){
-    super();
-}
+    public DayTicket(double price, boolean paid, int ID, String startDate, int daysActive) {
+        super(price, paid, ID, startDate, daysActive);
+    }
 }
