@@ -10,11 +10,11 @@ package Model;
  * @author Javod Fields
  */
 public class Ticket {
-    protected double price;
-    protected boolean paid;
-    protected int ID;
-    protected String startDate;
-    protected int daysActive;
+    private double price;
+    private boolean paid;
+    private int ID;
+    private String startDate;
+    private int daysActive;
 
     public Ticket(double price, boolean paid, int ID, String startDate, int daysActive) {
         this.price = price;
