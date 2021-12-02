@@ -1,15 +1,13 @@
 
 package TestHarness;
 
-import Controller.purchaseTicketsController;
-import Controller.viewTicketsController;
+import Controller.CreditCardInputViewController;
+import Controller.ViewTicketsController;
 import Controller.RestaurantOrderController;
 import Model.Restaurants;
-import Model.adminModel;
-import Model.purchaseModel;
-import Model.viewTicketModel;
-import View.viewTickets;
-import View.purchaseTickets;
+import Model.AdminModel;
+import View.ViewTickets;
+import View.CreditCardInputView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -20,24 +18,24 @@ import java.util.Arrays;
 public class PurchasingTestHarness {
         
         // purchase interface
-        purchaseTicketsController purCntl = new purchaseTicketsController();
-        purchaseTickets purchaseUI = new purchaseTickets();
+        CreditCardInputViewController purCntl = new CreditCardInputViewController();
+        CreditCardInputView purchaseUI = new CreditCardInputView();
         
         // view interface
-        viewTicketsController viewCntl = new viewTicketsController();
-        viewTickets viewUI = new viewTickets();
+        ViewTicketsController viewCntl = new ViewTicketsController();
+        ViewTickets viewUI = new ViewTickets();
         
         // Restaurant Ordering (menu and order) - create interface and logic
-        viewTicketModel viewThem = new viewTicketModel();
-        purchaseModel purchaseSome = new purchaseModel();
+        ViewTicketModel viewThem = new ViewTicketModel();
+        PurchaseModel purchaseSome = new PurchaseModel();
         
-        // Package -> Controller -> purchaseTicketsController test stubs
+        // Package -> Controller -> CreditCardInputViewController test stubs
         public void PTTestStubs() {
             boolean connectStatus = purCntl.connectedUserClient(purchaseUI);
             System.out.println("  purchaseTicketsController.connectUserClient output: " + connectStatus);
         }
 
-        // Package -> Controller -> viewTicketsController
+        // Package -> Controller -> ViewTicketsController
        public void VTTestStubs() {
             boolean connectStatus = viewCntl.connectedUserClient(viewUI);
             System.out.println("  viewTicketsController.connectUserClient output: " + connectStatus);
