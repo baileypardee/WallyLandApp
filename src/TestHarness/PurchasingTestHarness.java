@@ -1,15 +1,15 @@
 
 package TestHarness;
 
-import Controller.purchaseTicketsController;
-import Controller.viewTicketsController;
+import Controller.PurchaseTicketsController;
+import Controller.ViewTicketsController;
 import Controller.RestaurantOrderController;
 import Model.Restaurants;
 import Model.adminModel;
 import Model.purchaseModel;
-import Model.viewTicketModel;
-import View.viewTickets;
-import View.purchaseTickets;
+import Model.ViewTicketModel;
+import View.ViewTickets;
+import View.PurchaseTickets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -20,15 +20,15 @@ import java.util.Arrays;
 public class PurchasingTestHarness {
         
         // purchase interface
-        purchaseTicketsController purCntl = new purchaseTicketsController();
-        purchaseTickets purchaseUI = new purchaseTickets();
+        PurchaseTicketsController purCntl = new PurchaseTicketsController();
+        PurchaseTickets purchaseUI = new PurchaseTickets();
         
         // view interface
-        viewTicketsController viewCntl = new viewTicketsController();
-        viewTickets viewUI = new viewTickets();
+        ViewTicketsController viewCntl = new ViewTicketsController();
+        ViewTickets viewUI = new ViewTickets();
         
         // Restaurant Ordering (menu and order) - create interface and logic
-        viewTicketModel viewThem = new viewTicketModel();
+        ViewTicketModel viewThem = new ViewTicketModel();
         purchaseModel purchaseSome = new purchaseModel();
         
         // Package -> Controller -> purchaseTicketsController test stubs

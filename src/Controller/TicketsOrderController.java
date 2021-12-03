@@ -79,7 +79,7 @@ public class TicketsOrderController implements ActionListener {
         Object obj = e.getSource();
         if(obj == purchaseTix.myTicketsBuy)
         {
-            viewTix = new ViewTicketsController(navCntrl, this);
+//            viewTix = new ViewTicketsController(navCntrl, this);
             purchaseTix.setVisible(false);
         }
         if(obj == purchaseTix.submitBuyTickets)

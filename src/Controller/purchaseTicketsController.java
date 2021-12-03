@@ -1,6 +1,6 @@
 package Controller;
 
-import View.purchaseTickets;
+import View.PurchaseTickets;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,12 +8,12 @@ import java.awt.event.ActionListener;
  * this will control the purchase gui
  * @author hayde
  */
-public class purchaseTicketsController implements ActionListener {
-    private purchaseTickets purchaseTix;
-    private viewTicketsController viewTix;
+public class PurchaseTicketsController implements ActionListener {
+    private PurchaseTickets purchaseTix;
+    private ViewTicketsController viewTix;
     private NavigationController navCntrl;
 
-    public purchaseTicketsController() {
+    public PurchaseTicketsController() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -21,7 +21,7 @@ public class purchaseTicketsController implements ActionListener {
      * getter for purchased tickets
      * @return (gets purchased tickets)
      */
-    public purchaseTickets getPurchaseTix() {
+    public PurchaseTickets getPurchaseTix() {
         return purchaseTix;
     }
 
@@ -29,7 +29,7 @@ public class purchaseTicketsController implements ActionListener {
      * setter for purchase tickets
      * @param purchaseTix sets variable of purchase tickets type
      */
-    public void setPurchaseTix(purchaseTickets purchaseTix) {
+    public void setPurchaseTix(PurchaseTickets purchaseTix) {
         this.purchaseTix = purchaseTix;
     }
 
@@ -37,7 +37,7 @@ public class purchaseTicketsController implements ActionListener {
      * getter for view tickets controller
      * @return (gets an instance of the view tickets controller)
      */
-    public viewTicketsController getViewTix() {
+    public ViewTicketsController getViewTix() {
         return viewTix;
     }
 
@@ -45,16 +45,16 @@ public class purchaseTicketsController implements ActionListener {
      * setter for view tickets
      * @param viewTix sets variable of viewTicketsController type
      */
-    public void setViewTix(viewTicketsController viewTix) {
+    public void setViewTix(ViewTicketsController viewTix) {
         this.viewTix = viewTix;
     }
     
     /**
      * create the purchase tickets gui
      */
-    public purchaseTicketsController(NavigationController navCntrl) {
+    public PurchaseTicketsController(NavigationController navCntrl) {
         this.navCntrl = navCntrl;
-        purchaseTix = new purchaseTickets();
+        purchaseTix = new PurchaseTickets();
         purchaseTix.myTicketsBuy.addActionListener(this);
         purchaseTix.submitBuyTickets.addActionListener(this);
         purchaseTix.setVisible(true);
@@ -70,7 +70,7 @@ public class purchaseTicketsController implements ActionListener {
         Object obj = e.getSource();
         if(obj == purchaseTix.myTicketsBuy)
         {
-            viewTix = new viewTicketsController(navCntrl, this);
+            viewTix = new ViewTicketsController(navCntrl, this);
             purchaseTix.setVisible(false);
         }
         if(obj == purchaseTix.submitBuyTickets)
@@ -81,7 +81,7 @@ public class purchaseTicketsController implements ActionListener {
         
     }
 
-    public boolean connectedUserClient(purchaseTickets purchaseUI) {
+    public boolean connectedUserClient(PurchaseTickets purchaseUI) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
