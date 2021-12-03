@@ -5,18 +5,18 @@
  */
 package View;
 
-import Controller.purchaseTicketsController;
+import Controller.PurchaseTicketsController;
 
 /**
  *
  * @author hayde
  */
-public class viewTickets extends javax.swing.JFrame {
+public class ViewTickets extends javax.swing.JFrame {
 
     /**
      * Creates new form viewTickets
      */
-    public viewTickets() {
+    public ViewTickets() {
         initComponents();
     }
 
@@ -107,14 +107,22 @@ public class viewTickets extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -127,7 +135,7 @@ public class viewTickets extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new viewTickets().setVisible(true);
+                new ViewTickets().setVisible(true);
             }
         });
     }
@@ -140,7 +148,7 @@ public class viewTickets extends javax.swing.JFrame {
     public javax.swing.JButton purchaseTicketsButton;
     // End of variables declaration//GEN-END:variables
 
-    public boolean connectedRestServer(purchaseTicketsController purCntl) {
+    public boolean connectedRestServer(PurchaseTicketsController purCntl) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
