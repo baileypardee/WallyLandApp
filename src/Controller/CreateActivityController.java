@@ -6,7 +6,6 @@ package Controller;
 
 import View.AdminNavigation;
 import View.CreateActivityUI;
-import View.NavigationUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,21 +13,20 @@ import java.awt.event.ActionListener;
  *
  * @author meky
  */
-public class AdminNavigationController implements ActionListener{
-
-    private AdminNavigation adminNavUI;
-   // private CreateActivityUI createActivityUI;
-    private CreateActivityController createActivityCntl;
+public class CreateActivityController implements ActionListener{
+    
+    private CreateActivityUI createActivityUI;
+    private AdminNavigationController adminNavCntrl;
     //private LoginController loginCntrl;
     
     /**
      * Constructor for the Navigation Controller
      * used to instantiate aspects of the controller
      */
-    public AdminNavigationController() {
-        adminNavUI = new AdminNavigation(this);
-        adminNavUI.createActivityBtn.addActionListener(this);
-        adminNavUI.setVisible(true);
+    public CreateActivityController() {
+        createActivityUI = new CreateActivityUI(this);
+        createActivityUI.cancelBtn.addActionListener(this);
+        createActivityUI.setVisible(true);
     }
     
      /**
@@ -36,20 +34,18 @@ public class AdminNavigationController implements ActionListener{
      * @param navInterface a user interface which can view the main menu
      * @return the connection status
      */    
-    public boolean connectedUserClient(AdminNavigation navInterface) {
-        adminNavUI = navInterface;
+    public boolean connectedUserClient(CreateActivityUI createActivityNav) {
+        createActivityUI = createActivityNav;
         return true;
     }
 
-    @Override
+
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if (obj == adminNavUI.createActivityBtn) {
-            createActivityCntl = new CreateActivityController();
-            adminNavUI.setVisible(false);
+        if (obj == createActivityUI.cancelBtn) {
+            adminNavCntrl = new AdminNavigationController();
+            createActivityUI.setVisible(false);
         }
     }
-    
-    
     
 }

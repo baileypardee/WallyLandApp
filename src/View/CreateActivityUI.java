@@ -4,19 +4,36 @@
  */
 package View;
 
+import Controller.CreateActivityController;
+
 /**
  *
  * @author meky
  */
 public class CreateActivityUI extends javax.swing.JFrame {
 
+    private CreateActivityController createActivityCntl;
+
     /**
-     * Creates new form CreateActivityUI
+     * Creates new form AdminNavigation
      */
     public CreateActivityUI() {
         initComponents();
     }
 
+    public CreateActivityUI(CreateActivityController aThis) {
+        initComponents(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+        /**
+     * Method to connect to our NavigationController
+     * @param navController a menu
+     * @return the connection status
+     */   
+    public boolean connectedRestServer(CreateActivityController createActivityController) {
+        createActivityCntl = createActivityController;
+        return true;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,8 +52,8 @@ public class CreateActivityUI extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        saveBtn = new javax.swing.JButton();
+        cancelBtn = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -60,14 +77,14 @@ public class CreateActivityUI extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton2.setText("Save");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        saveBtn.setText("Save");
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                saveBtnActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Cancel");
+        cancelBtn.setText("Cancel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,9 +94,9 @@ public class CreateActivityUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2))
+                        .addComponent(cancelBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(saveBtn))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -117,8 +134,8 @@ public class CreateActivityUI extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(saveBtn)
+                    .addComponent(cancelBtn))
                 .addGap(14, 14, 14))
         );
 
@@ -129,9 +146,9 @@ public class CreateActivityUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_saveBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,9 +186,8 @@ public class CreateActivityUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton cancelBtn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -180,5 +196,6 @@ public class CreateActivityUI extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    public javax.swing.JButton saveBtn;
     // End of variables declaration//GEN-END:variables
 }
