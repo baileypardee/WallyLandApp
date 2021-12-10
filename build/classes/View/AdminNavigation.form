@@ -40,6 +40,11 @@
                   </Group>
               </Group>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <Component id="backBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -51,7 +56,9 @@
               <Component id="manageActivitiesBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="createActivityBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="129" max="32767" attributes="0"/>
+              <EmptySpace pref="83" max="32767" attributes="0"/>
+              <Component id="backBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -64,6 +71,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageActivitiesBtnActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="createActivityBtn">
       <Properties>
@@ -77,6 +87,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Admin Panel "/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="backBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Back"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

@@ -21,6 +21,10 @@ public class AdminNavigationController implements ActionListener{
     private CreateActivityController createActivityCntl;
     //private LoginController loginCntrl;
     
+    private ManageActivityController manageActivityCntl;
+    
+    private LoginController loginCntl;
+    
     /**
      * Constructor for the Navigation Controller
      * used to instantiate aspects of the controller
@@ -28,6 +32,8 @@ public class AdminNavigationController implements ActionListener{
     public AdminNavigationController() {
         adminNavUI = new AdminNavigation(this);
         adminNavUI.createActivityBtn.addActionListener(this);
+        adminNavUI.manageActivitiesBtn.addActionListener(this);
+        adminNavUI.backBtn.addActionListener(this);
         adminNavUI.setVisible(true);
     }
     
@@ -47,6 +53,11 @@ public class AdminNavigationController implements ActionListener{
         if (obj == adminNavUI.createActivityBtn) {
             createActivityCntl = new CreateActivityController();
             adminNavUI.setVisible(false);
+        } else if (obj == adminNavUI.manageActivitiesBtn) {
+            manageActivityCntl = new ManageActivityController();
+            adminNavUI.setVisible(false);
+        } else if (obj == adminNavUI.backBtn) {
+            loginCntl = new LoginController();
         }
     }
     
