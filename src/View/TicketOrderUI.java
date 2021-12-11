@@ -1,7 +1,7 @@
 package View;
 
-import Controller.RestaurantController;
-import Model.Restaurants;
+import Controller.TicketsOrderController;
+import Model.Ticket;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,17 +14,17 @@ import javax.swing.SpinnerNumberModel;
  * @author bpardee
  */
 public class TicketOrderUI extends javax.swing.JFrame {
-    private RestaurantController restCntrl;
-    private Restaurants restaurant;
+    private TicketsOrderController orderCntrl;
+    private Ticket ticket;
     private TicketOrderUI menuUI;
     /**
      * Creates new form RestaurantMenuUI
      * @param restCntrl references the Restaurant Controller class
      * @param restaurant references the Restaurants class
      */
-    public TicketOrderUI(RestaurantController restCntrl, Restaurants restaurant) {
-        this.restCntrl = restCntrl;
-        this.restaurant = restaurant;
+    public TicketOrderUI(TicketsOrderController orderCntrl, Ticket ticket) {
+        this.orderCntrl = orderCntrl;
+        this.ticket = ticket;
         initComponents();
         progressBar = new javax.swing.JProgressBar(0, 100);
         jPanel2.add(progressBar);
@@ -38,162 +38,11 @@ public class TicketOrderUI extends javax.swing.JFrame {
      * @param restController a menu
      * @return the connection status
      */   
-    public boolean connectedRestServer(RestaurantController restController) {
-        restCntrl = restController;
+    public boolean connectedRestServer(TicketsOrderController orderController) {
+        orderCntrl = orderController;
         return true;
     }
 
-    /**
-     * getter for menu item 1 label
-     * @return JLabel menuItem1
-     */
-    public JLabel getMenuItem1() {
-        return menuItem1;
-    }
-
-    /**
-     * setter for menu item 1
-     * @param menuItem1 JLabel for menu item 1
-     */
-    public void setMenuItem1(String menuItem1) {
-        this.menuItem1.setText(menuItem1);
-    }
-
-    /**
-     * getter for menu item 2 label
-     * @return JLabel menuItem2
-     */
-    public JLabel getMenuItem2() {
-        return menuItem2;
-    }
-
-    /**
-     * setter for menu item 2
-     * @param menuItem1 JLabel for menu item 2
-     */
-    public void setMenuItem2(String menuItem2) {
-        this.menuItem2.setText(menuItem2);
-    }
-
-    /**
-     * getter for menu item 3 label
-     * @return JLabel menuItem3
-     */
-    public JLabel getMenuItem3() {
-        return menuItem3;
-    }
-
-    /**
-     * setter for menu item 3
-     * @param menuItem1 JLabel for menu item 3
-     */
-    public void setMenuItem3(String menuItem3) {
-        this.menuItem3.setText(menuItem3);
-    }
-
-    /**
-     * getter for menu item 4 label
-     * @return JLabel menuItem4
-     */
-    public JLabel getMenuItem4() {
-        return menuItem4;
-    }
-
-    /**
-     * setter for menu item 4
-     * @param menuItem1 JLabel for menu item 4
-     */
-    public void setMenuItem4(String menuItem4) {
-        this.menuItem4.setText(menuItem4);
-    }
-
-    public JSpinner getMenuItemAmt2() {
-        return dayTixAmt;
-    }
-
-    public void setMenuItemAmt2(JSpinner menuItemAmt2) {
-        this.dayTixAmt = menuItemAmt2;
-    }
-
-    public JSpinner getMenuItemAmt3() {
-        return weekTixAmt;
-    }
-
-    public void setMenuItemAmt3(JSpinner menuItemAmt3) {
-        this.weekTixAmt = menuItemAmt3;
-    }
-
-    public JSpinner getMenuItemAmt4() {
-        return seasonTixAmt;
-    }
-
-    public void setMenuItemAmt4(JSpinner menuItemAmt4) {
-        this.seasonTixAmt = menuItemAmt4;
-    }
-
-    /**
-     * getter for menu item 2 price
-     * @return JLabel menuItemPrice2
-     */
-    public JLabel getMenuItemPrice2() {
-        return menuItemPrice2;
-    }
-
-    /**
-     * setter for menu item 2 price
-     * @param menuItemPrice2 JLabel for menuItemPrice2
-     */
-    public void setMenuItemPrice2(Double menuItemPrice2) {
-        this.menuItemPrice2.setText(String.format("%.2f", menuItemPrice2));
-    }
-
-    /**
-     * getter for menu item 3 price
-     * @return JLabel menuItemPrice3
-     */
-    public JLabel getMenuItemPrice3() {
-        return menuItemPrice3;
-    }
-
-    /**
-     * setter for menu item 3 price
-     * @param menuItemPrice3 JLabel for menuItemPrice3
-     */
-    public void setMenuItemPrice3(Double menuItemPrice3) {
-        this.menuItemPrice3.setText(String.format("%.2f", menuItemPrice3));
-    }
-
-    /**
-     * getter for menu item 4 price
-     * @return JLabel menuItemPrice4
-     */
-    public JLabel getMenuItemPrice4() {
-        return menuItemPrice4;
-    }
-
-    /**
-     * setter for menu item 4 price
-     * @param menuItemPrice4 JLabel for menuItemPrice4
-     */
-    public void setMenuItemPrice4(Double menuItemPrice4) {
-        this.menuItemPrice4.setText(String.format("%.2f", menuItemPrice4));
-    }
-
-    /**
-     * getter for menu title
-     * @return JLabel menuTitle
-     */
-    public JLabel getMenuTitle() {
-        return menuTitle;
-    }
-
-    /**
-     * setter for menu title
-     * @param title String for menu title
-     */
-    public void setMenuTitle(String title) {
-        this.menuTitle.setText(title);
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
