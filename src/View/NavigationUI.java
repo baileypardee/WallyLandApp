@@ -8,20 +8,30 @@ import Controller.RestaurantController;
  * @author bpardee
  */
 public class NavigationUI extends javax.swing.JFrame {
+
     private NavigationController navCntrl;
+
     /**
      * Creates new form NavigationUI
+     *
      * @param navigationController references the Navigation Controller class
      */
     public NavigationUI(NavigationController navigationController) {
         initComponents();
     }
 
+
+    NavigationUI() {
+        initComponents();
+    }
+
+
     /**
      * Method to connect to our NavigationController
+     *
      * @param navController a menu
      * @return the connection status
-     */   
+     */
     public boolean connectedRestServer(NavigationController navController) {
         navCntrl = navController;
         return true;
@@ -118,7 +128,6 @@ public class NavigationUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

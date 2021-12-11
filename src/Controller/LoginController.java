@@ -1,4 +1,5 @@
 package Controller;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,12 +8,12 @@ import View.NavigationUI;
 import View.RegistrationUI;
 import View.LoginPage;
 
-
 /**
  *
  * @author fdadebo
  */
-public class LoginController implements ActionListener{
+public class LoginController implements ActionListener {
+
     private NavigationController navCntrl;
     private AdminNavigationController adminNavCntrl;
     private LoginPage loginUI;
@@ -30,7 +31,9 @@ public class LoginController implements ActionListener{
         loginUI.signUpButtonL.addActionListener(this);
         act = true;
         loginUI.setVisible(true);
-     };
+    }
+
+    ;
     
     /**
      * Method to 'connect' to our user
@@ -49,30 +52,36 @@ public class LoginController implements ActionListener{
     public void setAct(boolean act) {
         this.act = act;
     }
+
     
     
     /**
      * Action Events for buttons
-     * @param e representing an Action Event
-     * returns void
+     *
+     * @param e representing an Action Event returns void
      */
-    
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
         System.out.println(isAct());
+        /*        if(obj == loginUI.loginButton && isAct())
+=======
 /*        if(obj == loginUI.loginButton && isAct())
+>>>>>>> 73802fb93db1010b374705c247b35877b45f972a
 //        {
 //            System.out.println("test");
 //           navCntrl = new NavigationController();
 //           loginUI.setVisible(false);
-        } else */if (obj == loginUI.adminLogin) {
+<<<<<<< HEAD
+//        } else */
+        if (obj == loginUI.adminLogin) {
+
+        } else if (obj == loginUI.adminLogin) {
             adminNavCntrl = new AdminNavigationController();
             loginUI.setVisible(false);
-       /* }else if (obj == loginUI.signUpButtonL){
-            registraCntrl = new RegistrationController();
-            loginUI.setVisible(false);*/
-            
-        }
+        }/*else if (obj == loginUI.signUpButtonL){
+//            registraCntrl = new RegistrationController();
+//            loginUI.setVisible(false);*/
+//            
     }
 }

@@ -4,8 +4,10 @@ import View.CreditCardInputView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 /**
  * this will control the purchase gui
+ *
  * @author hayde
  */
 public class CreditCardInputViewController implements ActionListener {
@@ -29,6 +31,7 @@ public class CreditCardInputViewController implements ActionListener {
     
     /**
      * getter for purchased tickets
+     *
      * @return (gets purchased tickets)
      */
     public CreditCardInputView getPurchaseTix() {
@@ -37,6 +40,7 @@ public class CreditCardInputViewController implements ActionListener {
 
     /**
      * setter for purchase tickets
+     *
      * @param purchaseTix sets variable of purchase tickets type
      */
     public void setPurchaseTix(CreditCardInputView purchaseTix) {
@@ -45,6 +49,7 @@ public class CreditCardInputViewController implements ActionListener {
 
     /**
      * getter for view tickets controller
+     *
      * @return (gets an instance of the view tickets controller)
      */
     public ViewTicketsController getViewTix() {
@@ -58,29 +63,29 @@ public class CreditCardInputViewController implements ActionListener {
     public void setViewTix(ViewTicketsController viewTix) {
         this.viewTix = viewTix;
     }
-    
+
     /**
      * create the purchase tickets gui
      */
     
     /**
      * Action Events for buttons
+     *
      * @param e the command line arguments
      */
     @Override
-    public void actionPerformed(ActionEvent e){
+    public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
         if(obj == purchaseTix.myTicketsBuy)
         {
             viewTix = new ViewTicketsController(navCntrl);
             purchaseTix.setVisible(false);
         }
-        if(obj == purchaseTix.submitBuyTickets)
-        {
+        if (obj == purchaseTix.submitBuyTickets) {
             navCntrl = new NavigationController();
             purchaseTix.setVisible(false);
         }
-        
+
     }
 
     public boolean connectedUserClient(CreditCardInputView purchaseUI) {

@@ -12,14 +12,16 @@ import javax.swing.JTextField;
  *
  * @author bpardee
  */
-public class RestaurantOrderController implements ActionListener{
+public class RestaurantOrderController implements ActionListener {
+
     private NavigationController navCntrl;
     private Restaurants restaurant;
     private RestaurantOrderUI orderUI;
     private RestaurantController menuCntrl;
-    
+
     /**
      * Constructor for the restaurant ordering
+     *
      * @param restCntrl references the Restaurant Controller class
      */
     public RestaurantOrderController(RestaurantController restCntrl) {
@@ -32,33 +34,34 @@ public class RestaurantOrderController implements ActionListener{
         orderUI.setVisible(true);
         setOrderTotal();
     }
-    
+
     /**
      * sets order total
      */
-    public void setOrderTotal(){
+    public void setOrderTotal() {
         orderUI.setOrderTotalAmt(menuCntrl.getMenuItemAmts());
     }
-    
+
     /**
      * Method to 'connect' to our user
+     *
      * @param orderInterface a user interface which can place an order
      * @return the connection status
-     */    
+     */
     public boolean connectedUserClient(RestaurantOrderUI orderInterface) {
         orderUI = orderInterface;
         return true;
     }
-    
+
     /**
      * Action Events for buttons
+     *
      * @param e represents an Action Event
      */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if(obj == orderUI.backBtn)
-        {
+        if (obj == orderUI.backBtn) {
             menuCntrl = new RestaurantController(navCntrl);
             orderUI.setVisible(false);
         }
@@ -87,5 +90,5 @@ public class RestaurantOrderController implements ActionListener{
             }
         }
     }
-    
+
 }
