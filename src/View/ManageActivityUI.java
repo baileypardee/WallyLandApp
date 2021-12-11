@@ -43,7 +43,7 @@ public class ManageActivityUI extends javax.swing.JFrame {
     
     public ManageActivityUI(ManageActivityController manageActivityController) {
         this.manageActivityCntl = manageActivityController;
-        initComponents(); //To change body of generated methods, choose Tools | Templates.
+        initComponents(); 
         myInitComponents();
     }
     
