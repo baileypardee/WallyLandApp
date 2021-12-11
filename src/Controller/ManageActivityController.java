@@ -4,11 +4,13 @@
  */
 package Controller;
 
+import Model.Activity;
 import Model.ActivityList;
 import Model.ActivityTableModel;
 import View.ManageActivityUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 /**
  *
@@ -45,7 +47,13 @@ public class ManageActivityController implements ActionListener{
     
     public void setActivityTableModel(ActivityTableModel activityTableModel) {
         this.activityTableModel = activityTableModel;
-    } 
+    }
+    
+    public void addToActivityTableModel(Activity activity) {
+        List<Activity> activityList = this.getActivityList().getActivityList();
+        activityList.add(activity);
+        activityTableModel = new ActivityTableModel(activityList);
+    }
     
     public ActivityList getActivityList() {
         return activityList;
