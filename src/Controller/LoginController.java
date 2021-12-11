@@ -52,12 +52,9 @@ public class LoginController implements ActionListener {
     public void setAct(boolean act) {
         this.act = act;
     }
-<<<<<<< HEAD
 
-=======
     
     
->>>>>>> 73802fb93db1010b374705c247b35877b45f972a
     /**
      * Action Events for buttons
      *
@@ -67,7 +64,6 @@ public class LoginController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
         System.out.println(isAct());
-<<<<<<< HEAD
         /*        if(obj == loginUI.loginButton && isAct())
 =======
 /*        if(obj == loginUI.loginButton && isAct())
@@ -79,9 +75,8 @@ public class LoginController implements ActionListener {
 <<<<<<< HEAD
 //        } else */
         if (obj == loginUI.adminLogin) {
-=======
-        } else */if (obj == loginUI.adminLogin) {
->>>>>>> 73802fb93db1010b374705c247b35877b45f972a
+
+        } else if (obj == loginUI.adminLogin) {
             adminNavCntrl = new AdminNavigationController();
             loginUI.setVisible(false);
         }/*else if (obj == loginUI.signUpButtonL){

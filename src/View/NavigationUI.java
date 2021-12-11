@@ -20,13 +20,12 @@ public class NavigationUI extends javax.swing.JFrame {
         initComponents();
     }
 
-<<<<<<< HEAD
+
     NavigationUI() {
         initComponents();
     }
 
-=======
->>>>>>> 73802fb93db1010b374705c247b35877b45f972a
+
     /**
      * Method to connect to our NavigationController
      *

@@ -147,7 +147,6 @@ public class loginPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-<<<<<<< HEAD
         JSONArray jrr = new JSONArray();
         JSONParser Jp = new JSONParser();
 
@@ -184,44 +183,6 @@ public class loginPage extends javax.swing.JFrame {
                 loginCntrl.setAct(false);
             }
         }  // TODO add your handling code here:
-=======
-       JSONArray jrr = new JSONArray();
-       JSONParser Jp = new JSONParser();
-
-       Object ob = null;
-       
-      
-
-       
-
-       try{
-           FileReader file = new FileReader("UserData.json");
-           ob=Jp.parse(file);
-           jrr=(JSONArray) ob;
-           file.close();  
-       } catch(Exception ex){
-           JOptionPane.showMessageDialog(null,"Error Occured While fetching");
-       }
-              
-       JSONObject obj = new JSONObject();
-       int size = jrr.size();
-       obj.put("Email",jTextField1.getText());
-       obj.put("Password", PasswordField1.getText());
-       // obj.put("Password", PasswordField1.getPassword());
-
-       jrr.add(obj);
-       
-       for(int i=0; i<size; i++){
-       if(obj.equals(jrr.get(i))){
-           JOptionPane.showMessageDialog(null, "Password Matched");
-            navCntrl = new NavigationController();
-           break;   
-       }else if(i==size-1){
-           JOptionPane.showMessageDialog(null, "Wrong EmailAddress/Password!!");
-           loginCntrl.setAct(false);
-       } 
-      }  // TODO add your handling code here:
->>>>>>> 73802fb93db1010b374705c247b35877b45f972a
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void adminLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminLoginActionPerformed
