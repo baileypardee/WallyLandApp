@@ -19,7 +19,7 @@ import java.io.FileReader;
  *
  * @author hayde
  */
-public class loginPage extends javax.swing.JFrame {
+public class LoginPage extends javax.swing.JFrame {
 
     private LoginController loginCntrl;
     private NavigationController navCntrl;
@@ -27,7 +27,7 @@ public class loginPage extends javax.swing.JFrame {
     /**
      * Creates new form viewTickets
      */
-    public loginPage(LoginController loginCntrl) {
+    public LoginPage(LoginController loginCntrl) {
         this.loginCntrl = loginCntrl;
         initComponents();
     }
