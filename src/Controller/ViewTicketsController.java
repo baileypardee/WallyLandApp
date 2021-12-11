@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
  */
 public class ViewTicketsController implements ActionListener{//will grab tickets based on a verified user and control from here
     private NavigationController navCntrl;
-    private CreditCardInputViewController purchaseTicketsCntrl;
+    private  CreditCardInputViewController purchaseTicketsCntrl;
     private ViewTickets viewTicketsUI;
     
     /**
@@ -19,12 +19,11 @@ public class ViewTicketsController implements ActionListener{//will grab tickets
      * @param navCntrl instance of the navigation controller
      * @param purchaseTicketsCntrl instance of the purchase tickets controller
      */
-    public ViewTicketsController(NavigationController navCntrl, CreditCardInputViewController purchaseTicketsCntrl) {
+    public ViewTicketsController(NavigationController navCntrl) {
         this.navCntrl = navCntrl;
         this.purchaseTicketsCntrl = purchaseTicketsCntrl;
         viewTicketsUI = new ViewTickets();
-        viewTicketsUI.printTicketsButton.addActionListener(this);
-        viewTicketsUI.purchaseTicketsButton.addActionListener(this);
+        viewTicketsUI.backBtn.addActionListener(this);
         viewTicketsUI.setVisible(true);
     }
 
@@ -39,14 +38,9 @@ public class ViewTicketsController implements ActionListener{//will grab tickets
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if(obj == viewTicketsUI.purchaseTicketsButton)
+        if(obj == viewTicketsUI.backBtn)
         {
             purchaseTicketsCntrl = new CreditCardInputViewController(navCntrl);
-            viewTicketsUI.setVisible(false);
-        }
-        if(obj == viewTicketsUI.printTicketsButton)
-        {
-            navCntrl = new NavigationController();
             viewTicketsUI.setVisible(false);
         }
     }

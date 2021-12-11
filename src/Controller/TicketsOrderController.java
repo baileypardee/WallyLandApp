@@ -18,6 +18,15 @@ public class TicketsOrderController implements ActionListener {
     public TicketsOrderController() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+       public TicketsOrderController(NavigationController navCntrl) {
+        this.navCntrl = navCntrl;
+        purchaseTix = new CreditCardInputView();
+        purchaseTix.myTicketsBuy.addActionListener(this);
+        purchaseTix.submitBuyTickets.addActionListener(this);
+        purchaseTix.setVisible(true);
+        
+    }
 
     public TicketOrderUI getTicketOrder() {
         return ticketOrder;
@@ -61,14 +70,7 @@ public class TicketsOrderController implements ActionListener {
     /**
      * create the purchase tickets gui
      */
-    public TicketsOrderController(NavigationController navCntrl) {
-        this.navCntrl = navCntrl;
-        purchaseTix = new CreditCardInputView();
-        purchaseTix.myTicketsBuy.addActionListener(this);
-        purchaseTix.submitBuyTickets.addActionListener(this);
-        purchaseTix.setVisible(true);
-        
-    }
+ 
 
     /**
      * Action Events for buttons
@@ -79,7 +81,7 @@ public class TicketsOrderController implements ActionListener {
         Object obj = e.getSource();
         if(obj == purchaseTix.myTicketsBuy)
         {
-            viewTix = new ViewTicketsController(navCntrl, this);
+            viewTix = new ViewTicketsController(navCntrl);
             purchaseTix.setVisible(false);
         }
         if(obj == purchaseTix.submitBuyTickets)

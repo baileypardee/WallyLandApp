@@ -30,8 +30,7 @@ public class ViewTickets extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        purchaseTicketsButton = new javax.swing.JButton();
-        printTicketsButton = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -39,14 +38,12 @@ public class ViewTickets extends javax.swing.JFrame {
 
         jLabel1.setText("My Tickets");
 
-        purchaseTicketsButton.setText("Purchase Tickets");
-        purchaseTicketsButton.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                purchaseTicketsButtonActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-
-        printTicketsButton.setText("Print Tickets");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -58,10 +55,8 @@ public class ViewTickets extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(purchaseTicketsButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(printTicketsButton)
-                .addGap(30, 30, 30))
+                .addComponent(backBtn)
+                .addGap(30, 325, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(83, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,18 +72,16 @@ public class ViewTickets extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(purchaseTicketsButton)
-                    .addComponent(printTicketsButton))
+                .addComponent(backBtn)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void purchaseTicketsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purchaseTicketsButtonActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_purchaseTicketsButtonActionPerformed
+    }//GEN-LAST:event_backBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,11 +134,10 @@ public class ViewTickets extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    public javax.swing.JButton printTicketsButton;
-    public javax.swing.JButton purchaseTicketsButton;
     // End of variables declaration//GEN-END:variables
 
     public boolean connectedRestServer(CreditCardInputViewController purCntl) {

@@ -33,8 +33,8 @@ public class SingleTicketView extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        myTicketsBuy = new javax.swing.JButton();
-        submitBuyTickets = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
+        menuBtn = new javax.swing.JButton();
         userText = new javax.swing.JLabel();
         ticketTypeText = new javax.swing.JLabel();
         dateText = new javax.swing.JLabel();
@@ -46,17 +46,17 @@ public class SingleTicketView extends javax.swing.JFrame {
 
         jLabel1.setText("Ticket");
 
-        myTicketsBuy.setText("My Tickets");
-        myTicketsBuy.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myTicketsBuyActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
 
-        submitBuyTickets.setText("Submit");
-        submitBuyTickets.addActionListener(new java.awt.event.ActionListener() {
+        menuBtn.setText("Menu");
+        menuBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitBuyTicketsActionPerformed(evt);
+                menuBtnActionPerformed(evt);
             }
         });
 
@@ -78,9 +78,9 @@ public class SingleTicketView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(myTicketsBuy)
+                .addComponent(backBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(submitBuyTickets)
+                .addComponent(menuBtn)
                 .addGap(37, 37, 37))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(20, 83, Short.MAX_VALUE)
@@ -122,21 +122,21 @@ public class SingleTicketView extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(myTicketsBuy)
-                    .addComponent(submitBuyTickets))
+                    .addComponent(backBtn)
+                    .addComponent(menuBtn))
                 .addGap(37, 37, 37))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void myTicketsBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myTicketsBuyActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_myTicketsBuyActionPerformed
+    }//GEN-LAST:event_backBtnActionPerformed
 
-    private void submitBuyTicketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBuyTicketsActionPerformed
+    private void menuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_submitBuyTicketsActionPerformed
+    }//GEN-LAST:event_menuBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,6 +237,7 @@ public class SingleTicketView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton backBtn;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
@@ -245,8 +246,7 @@ public class SingleTicketView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    public javax.swing.JButton myTicketsBuy;
-    public javax.swing.JButton submitBuyTickets;
+    public javax.swing.JButton menuBtn;
     private javax.swing.JLabel ticketTypeText;
     private javax.swing.JLabel userText;
     // End of variables declaration//GEN-END:variables

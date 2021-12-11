@@ -16,7 +16,17 @@ public class CreditCardInputViewController implements ActionListener {
     public CreditCardInputViewController() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+        public CreditCardInputViewController(NavigationController navCntrl) {
+        this.navCntrl = navCntrl;
+        purchaseTix = new CreditCardInputView();
+        purchaseTix.myTicketsBuy.addActionListener(this);
+        purchaseTix.submitBuyTickets.addActionListener(this);
+        purchaseTix.setVisible(true);
+        
+    }
 
+    
     /**
      * getter for purchased tickets
      * @return (gets purchased tickets)
@@ -52,15 +62,7 @@ public class CreditCardInputViewController implements ActionListener {
     /**
      * create the purchase tickets gui
      */
-    public CreditCardInputViewController(NavigationController navCntrl) {
-        this.navCntrl = navCntrl;
-        purchaseTix = new CreditCardInputView();
-        purchaseTix.myTicketsBuy.addActionListener(this);
-        purchaseTix.submitBuyTickets.addActionListener(this);
-        purchaseTix.setVisible(true);
-        
-    }
-
+    
     /**
      * Action Events for buttons
      * @param e the command line arguments
@@ -70,7 +72,7 @@ public class CreditCardInputViewController implements ActionListener {
         Object obj = e.getSource();
         if(obj == purchaseTix.myTicketsBuy)
         {
-            viewTix = new ViewTicketsController(navCntrl, this);
+            viewTix = new ViewTicketsController(navCntrl);
             purchaseTix.setVisible(false);
         }
         if(obj == purchaseTix.submitBuyTickets)

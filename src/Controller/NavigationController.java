@@ -57,7 +57,7 @@ public class NavigationController implements ActionListener {
         }
         if(obj == navigationUI.viewTicketsBtn)
         {
-            viewTicketsCntrl = new ViewTicketsController(this, purchaseTicketsCntrl);
+            viewTicketsCntrl = new ViewTicketsController(this);
             navigationUI.setVisible(false);
         }
         if(obj == navigationUI.logoutBtn)
