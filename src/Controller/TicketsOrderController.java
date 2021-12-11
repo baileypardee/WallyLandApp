@@ -1,6 +1,6 @@
 package Controller;
 
-import View.PurchaseTickets;
+import View.CreditCardInputView;
 import View.TicketOrderUI;
 
 import java.awt.event.ActionEvent;
@@ -11,12 +11,21 @@ import java.awt.event.ActionListener;
  */
 public class TicketsOrderController implements ActionListener {
     private TicketOrderUI ticketOrder;
-    private PurchaseTickets purchaseTix;
+    private CreditCardInputView purchaseTix;
     private ViewTicketsController viewTix;
     private NavigationController navCntrl;
 
     public TicketsOrderController() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+       public TicketsOrderController(NavigationController navCntrl) {
+        this.navCntrl = navCntrl;
+        purchaseTix = new CreditCardInputView();
+        purchaseTix.myTicketsBuy.addActionListener(this);
+        purchaseTix.submitBuyTickets.addActionListener(this);
+        purchaseTix.setVisible(true);
+        
     }
 
     public TicketOrderUI getTicketOrder() {
@@ -27,11 +36,11 @@ public class TicketsOrderController implements ActionListener {
         this.ticketOrder = ticketOrder;
     }
 
-    public PurchaseTickets getPurchaseTix() {
+    public CreditCardInputView getPurchaseTix() {
         return purchaseTix;
     }
 
-    public void setPurchaseTix(PurchaseTickets purchaseTix) {
+    public void setPurchaseTix(CreditCardInputView purchaseTix) {
         this.purchaseTix = purchaseTix;
     }
 
@@ -61,14 +70,7 @@ public class TicketsOrderController implements ActionListener {
     /**
      * create the purchase tickets gui
      */
-    public TicketsOrderController(NavigationController navCntrl) {
-        this.navCntrl = navCntrl;
-        purchaseTix = new PurchaseTickets();
-        purchaseTix.myTicketsBuy.addActionListener(this);
-        purchaseTix.submitBuyTickets.addActionListener(this);
-        purchaseTix.setVisible(true);
-        
-    }
+ 
 
     /**
      * Action Events for buttons
@@ -79,7 +81,7 @@ public class TicketsOrderController implements ActionListener {
         Object obj = e.getSource();
         if(obj == purchaseTix.myTicketsBuy)
         {
-//            viewTix = new ViewTicketsController(navCntrl, this);
+            viewTix = new ViewTicketsController(navCntrl);
             purchaseTix.setVisible(false);
         }
         if(obj == purchaseTix.submitBuyTickets)
@@ -91,7 +93,7 @@ public class TicketsOrderController implements ActionListener {
         
     }
 
-    public boolean connectedUserClient(PurchaseTickets purchaseUI) {
+    public boolean connectedUserClient(CreditCardInputView purchaseUI) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

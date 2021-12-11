@@ -1,15 +1,13 @@
 
 package TestHarness;
 
-import Controller.PurchaseTicketsController;
+import Controller.CreditCardInputViewController;
 import Controller.ViewTicketsController;
 import Controller.RestaurantOrderController;
 import Model.Restaurants;
-import Model.adminModel;
-import Model.purchaseModel;
-import Model.ViewTicketModel;
+import Model.AdminModel;
 import View.ViewTickets;
-import View.PurchaseTickets;
+import View.CreditCardInputView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -20,8 +18,8 @@ import java.util.Arrays;
 public class PurchasingTestHarness {
         
         // purchase interface
-        PurchaseTicketsController purCntl = new PurchaseTicketsController();
-        PurchaseTickets purchaseUI = new PurchaseTickets();
+        CreditCardInputViewController purCntl = new CreditCardInputViewController();
+        CreditCardInputView purchaseUI = new CreditCardInputView();
         
         // view interface
         ViewTicketsController viewCntl = new ViewTicketsController();
@@ -29,15 +27,15 @@ public class PurchasingTestHarness {
         
         // Restaurant Ordering (menu and order) - create interface and logic
         ViewTicketModel viewThem = new ViewTicketModel();
-        purchaseModel purchaseSome = new purchaseModel();
+        PurchaseModel purchaseSome = new PurchaseModel();
         
-        // Package -> Controller -> purchaseTicketsController test stubs
+        // Package -> Controller -> CreditCardInputViewController test stubs
         public void PTTestStubs() {
             boolean connectStatus = purCntl.connectedUserClient(purchaseUI);
             System.out.println("  purchaseTicketsController.connectUserClient output: " + connectStatus);
         }
 
-        // Package -> Controller -> viewTicketsController
+        // Package -> Controller -> ViewTicketsController
        public void VTTestStubs() {
             boolean connectStatus = viewCntl.connectedUserClient(viewUI);
             System.out.println("  viewTicketsController.connectUserClient output: " + connectStatus);
