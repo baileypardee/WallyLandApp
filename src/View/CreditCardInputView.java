@@ -38,6 +38,7 @@ public class CreditCardInputView extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
+        menuBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,6 +64,8 @@ public class CreditCardInputView extends javax.swing.JFrame {
 
         jTextField3.setText("EXP");
 
+        menuBtn.setText("Menu");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,6 +73,8 @@ public class CreditCardInputView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(myTicketsBuy)
+                .addGap(48, 48, 48)
+                .addComponent(menuBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(submitBuyTickets)
                 .addGap(37, 37, 37))
@@ -99,7 +104,8 @@ public class CreditCardInputView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(myTicketsBuy)
-                    .addComponent(submitBuyTickets))
+                    .addComponent(submitBuyTickets)
+                    .addComponent(menuBtn))
                 .addGap(37, 37, 37))
         );
 
@@ -220,6 +226,7 @@ public class CreditCardInputView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton menuBtn;
     public javax.swing.JButton myTicketsBuy;
     public javax.swing.JButton submitBuyTickets;
     // End of variables declaration//GEN-END:variables

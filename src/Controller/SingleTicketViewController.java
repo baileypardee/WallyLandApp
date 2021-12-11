@@ -23,7 +23,7 @@ public class SingleTicketViewController implements ActionListener{//will grab ti
         this.navCntrl = navCntrl;
         this.purchaseTicketsCntrl = purchaseTicketsCntrl;
         viewTicketsUI = new ViewTickets();
-        viewTicketsUI.backBtn.addActionListener(this);
+        viewTicketsUI.menuBtn.addActionListener(this);
         viewTicketsUI.setVisible(true);
     }
 
@@ -38,7 +38,7 @@ public class SingleTicketViewController implements ActionListener{//will grab ti
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if(obj == viewTicketsUI.backBtn)
+        if(obj == viewTicketsUI.menuBtn)
         {
             purchaseTicketsCntrl = new CreditCardInputViewController(navCntrl);
             viewTicketsUI.setVisible(false);

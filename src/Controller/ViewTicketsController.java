@@ -2,7 +2,9 @@ package Controller;
 
 import Controller.CreditCardInputViewController;
 import Controller.ViewTicketsController;
+import Controller.TicketsOrderController;
 import View.ViewTickets;
+import View.TicketOrderUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
@@ -11,8 +13,11 @@ import java.awt.event.ActionListener;
  */
 public class ViewTicketsController implements ActionListener{//will grab tickets based on a verified user and control from here
     private NavigationController navCntrl;
-    private  CreditCardInputViewController purchaseTicketsCntrl;
+    private CreditCardInputViewController purchaseTicketsCntrl;
+    private TicketsOrderController orderTicketsController;
     private ViewTickets viewTicketsUI;
+    private TicketOrderUI orderTickets;
+    
     
     /**
      * Constructor for the view tickets controller class
@@ -21,9 +26,9 @@ public class ViewTicketsController implements ActionListener{//will grab tickets
      */
     public ViewTicketsController(NavigationController navCntrl) {
         this.navCntrl = navCntrl;
-        this.purchaseTicketsCntrl = purchaseTicketsCntrl;
         viewTicketsUI = new ViewTickets();
-        viewTicketsUI.backBtn.addActionListener(this);
+        viewTicketsUI.menuBtn.addActionListener(this);
+        viewTicketsUI.purchaseBtn.addActionListener(this);
         viewTicketsUI.setVisible(true);
     }
 
@@ -38,9 +43,13 @@ public class ViewTicketsController implements ActionListener{//will grab tickets
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if(obj == viewTicketsUI.backBtn)
+        if(obj == viewTicketsUI.menuBtn)
         {
-            purchaseTicketsCntrl = new CreditCardInputViewController(navCntrl);
+            navCntrl = new NavigationController();
+            viewTicketsUI.setVisible(false);
+        }
+        else if(obj == viewTicketsUI.purchaseBtn){
+            orderTicketsController = new TicketsOrderController(navCntrl);
             viewTicketsUI.setVisible(false);
         }
     }
