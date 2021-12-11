@@ -31,6 +31,12 @@ public class Activity {
         this.timeslot = timeslot;
     }
     
+    public Activity(String name, int capacity, String description) {
+        this.name = name;
+        this.capacity = capacity;
+        this.description = description;
+    }
+    
   /**
    * 
    * @return get the name of a park activity 
@@ -102,7 +108,7 @@ public class Activity {
 
     @Override
     public String toString() {
-        return "Activity{" + "name=" + name + ", capacity=" + capacity + ", description=" + description + ", timeslot=" + timeslot + '}';
+        return "Activity{" + "name=" + name + ", capacity=" + capacity + ", description=" + description;
     }
     
     

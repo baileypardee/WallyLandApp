@@ -4,7 +4,17 @@
  */
 package View;
 
+import Controller.AdminNavigationController;
 import Controller.ManageActivityController;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 /**
  *
@@ -13,21 +23,73 @@ import Controller.ManageActivityController;
 public class ManageActivityUI extends javax.swing.JFrame {
 
     private ManageActivityController manageActivityCntl;
+    private AdminNavigationController adminNavCntl;
+    
+    
+    private JPanel tablePanel, buttonPanel;
+    private JButton backButton;
+    //newButton;
+    private JScrollPane tableScroller;
+    private JTable activityTable;
     /**
      * Creates new form ManageActivityUI
      */
+    
+    
     public ManageActivityUI() {
+        //this.manageActivityCntl = manageActivityCntl;
         initComponents();
     }
     
-    public ManageActivityUI(ManageActivityController aThis) {
+    public ManageActivityUI(ManageActivityController manageActivityController) {
+        this.manageActivityCntl = manageActivityController;
         initComponents(); //To change body of generated methods, choose Tools | Templates.
+        myInitComponents();
     }
     
     
     public boolean connectedRestServer(ManageActivityController manageActivityController) {
-        manageActivityCntl = manageActivityController;
+        this.manageActivityCntl = manageActivityController;
         return true;
+    }
+    
+    public void myInitComponents() {
+        this.setTitle("Activity List");
+        tablePanel = new JPanel();
+        buttonPanel = new JPanel(new GridLayout(1,4));
+        activityTable = new JTable(manageActivityCntl.getActivityTableModel());
+        activityTable.getColumnModel().getColumn(0).setPreferredWidth(25);
+        activityTable.getColumnModel().getColumn(1).setPreferredWidth(50);
+        activityTable.getColumnModel().getColumn(2).setPreferredWidth(300);
+        backButton = new JButton("Back");
+        //detailsButton = new JButton("Show Details");
+        //detailsButton.addActionListener(new DetailsButtonListener());
+        backButton.addActionListener(new BackButtonListener());
+        //newButton = new JButton("New");
+        //buttonPanel.add(newButton);
+        //buttonPanel.add(detailsButton);
+        buttonPanel.add(backButton);
+        tableScroller = new JScrollPane(activityTable);
+        activityTable.setFillsViewportHeight(true);
+        tableScroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        tableScroller.setPreferredSize(new Dimension(700,600));
+        tablePanel.add(tableScroller);
+        this.setSize(800, 600);
+        this.setLocationRelativeTo(null);
+        this.setContentPane(new JPanel(new BorderLayout()));
+        this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+        this.getContentPane().add(tablePanel, BorderLayout.CENTER);
+    }
+    
+    public class BackButtonListener implements ActionListener {
+        
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Object obj = e.getSource();
+            if (obj == backButton) {
+                adminNavCntl = new AdminNavigationController();
+            }
+        }
     }
 
     /**
