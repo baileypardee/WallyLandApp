@@ -1,34 +1,33 @@
 package Controller;
 
-import Controller.purchaseTicketsController;
-import Controller.viewTicketsController;
-import View.viewTickets;
+import Controller.CreditCardInputViewController;
+import Controller.ViewTicketsController;
+import View.ViewTickets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  *
  * @author hayde
  */
-public class viewTicketsController implements ActionListener{//will grab tickets based on a verified user and control from here
+public class ViewTicketsController implements ActionListener{//will grab tickets based on a verified user and control from here
     private NavigationController navCntrl;
-    private purchaseTicketsController purchaseTicketsCntrl;
-    private viewTickets viewTicketsUI;
+    private  CreditCardInputViewController purchaseTicketsCntrl;
+    private ViewTickets viewTicketsUI;
     
     /**
      * Constructor for the view tickets controller class
      * @param navCntrl instance of the navigation controller
      * @param purchaseTicketsCntrl instance of the purchase tickets controller
      */
-    public viewTicketsController(NavigationController navCntrl, purchaseTicketsController purchaseTicketsCntrl) {
+    public ViewTicketsController(NavigationController navCntrl) {
         this.navCntrl = navCntrl;
         this.purchaseTicketsCntrl = purchaseTicketsCntrl;
-        viewTicketsUI = new viewTickets();
-        viewTicketsUI.printTicketsButton.addActionListener(this);
-        viewTicketsUI.purchaseTicketsButton.addActionListener(this);
+        viewTicketsUI = new ViewTickets();
+        viewTicketsUI.backBtn.addActionListener(this);
         viewTicketsUI.setVisible(true);
     }
 
-    public viewTicketsController() {
+    public ViewTicketsController() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
@@ -39,19 +38,14 @@ public class viewTicketsController implements ActionListener{//will grab tickets
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if(obj == viewTicketsUI.purchaseTicketsButton)
+        if(obj == viewTicketsUI.backBtn)
         {
-            purchaseTicketsCntrl = new purchaseTicketsController(navCntrl);
-            viewTicketsUI.setVisible(false);
-        }
-        if(obj == viewTicketsUI.printTicketsButton)
-        {
-            navCntrl = new NavigationController();
+            purchaseTicketsCntrl = new CreditCardInputViewController(navCntrl);
             viewTicketsUI.setVisible(false);
         }
     }
 
-    public boolean connectedUserClient(viewTickets viewUI) {
+    public boolean connectedUserClient(ViewTickets viewUI) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

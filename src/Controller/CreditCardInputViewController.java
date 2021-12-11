@@ -1,7 +1,6 @@
 package Controller;
 
 import View.CreditCardInputView;
-import View.TicketOrderUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,17 +8,16 @@ import java.awt.event.ActionListener;
  * this will control the purchase gui
  * @author hayde
  */
-public class TicketsOrderController implements ActionListener {
-    private TicketOrderUI ticketOrder;
+public class CreditCardInputViewController implements ActionListener {
     private CreditCardInputView purchaseTix;
     private ViewTicketsController viewTix;
     private NavigationController navCntrl;
 
-    public TicketsOrderController() {
+    public CreditCardInputViewController() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-       public TicketsOrderController(NavigationController navCntrl) {
+        public CreditCardInputViewController(NavigationController navCntrl) {
         this.navCntrl = navCntrl;
         purchaseTix = new CreditCardInputView();
         purchaseTix.myTicketsBuy.addActionListener(this);
@@ -28,29 +26,23 @@ public class TicketsOrderController implements ActionListener {
         
     }
 
-    public TicketOrderUI getTicketOrder() {
-        return ticketOrder;
-    }
-
-    public void setTicketOrder(TicketOrderUI ticketOrder) {
-        this.ticketOrder = ticketOrder;
-    }
-
+    
+    /**
+     * getter for purchased tickets
+     * @return (gets purchased tickets)
+     */
     public CreditCardInputView getPurchaseTix() {
         return purchaseTix;
     }
 
+    /**
+     * setter for purchase tickets
+     * @param purchaseTix sets variable of purchase tickets type
+     */
     public void setPurchaseTix(CreditCardInputView purchaseTix) {
         this.purchaseTix = purchaseTix;
     }
 
-    public NavigationController getNavCntrl() {
-        return navCntrl;
-    }
-
-    public void setNavCntrl(NavigationController navCntrl) {
-        this.navCntrl = navCntrl;
-    }
     /**
      * getter for view tickets controller
      * @return (gets an instance of the view tickets controller)
@@ -70,8 +62,7 @@ public class TicketsOrderController implements ActionListener {
     /**
      * create the purchase tickets gui
      */
- 
-
+    
     /**
      * Action Events for buttons
      * @param e the command line arguments
@@ -88,7 +79,6 @@ public class TicketsOrderController implements ActionListener {
         {
             navCntrl = new NavigationController();
             purchaseTix.setVisible(false);
-            
         }
         
     }
