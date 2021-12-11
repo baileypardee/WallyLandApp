@@ -46,6 +46,7 @@ public class AdminNavigation extends javax.swing.JFrame {
         manageActivitiesBtn = new javax.swing.JButton();
         createActivityBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        backBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +60,8 @@ public class AdminNavigation extends javax.swing.JFrame {
         createActivityBtn.setText("Create Activity ");
 
         jLabel1.setText("Admin Panel ");
+
+        backBtn.setText("Back");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,6 +79,10 @@ public class AdminNavigation extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(createActivityBtn)
                         .addGap(120, 120, 120))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(backBtn)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +93,9 @@ public class AdminNavigation extends javax.swing.JFrame {
                 .addComponent(manageActivitiesBtn)
                 .addGap(27, 27, 27)
                 .addComponent(createActivityBtn)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addComponent(backBtn)
+                .addGap(17, 17, 17))
         );
 
         pack();
@@ -132,8 +141,9 @@ public class AdminNavigation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton createActivityBtn;
+    public javax.swing.JButton backBtn;
+    public javax.swing.JButton createActivityBtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton manageActivitiesBtn;
+    public javax.swing.JButton manageActivitiesBtn;
     // End of variables declaration//GEN-END:variables
 }

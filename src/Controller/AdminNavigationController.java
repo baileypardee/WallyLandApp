@@ -5,6 +5,7 @@
 package Controller;
 
 import View.AdminNavigation;
+import View.CreateActivityUI;
 import View.NavigationUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +17,13 @@ import java.awt.event.ActionListener;
 public class AdminNavigationController implements ActionListener{
 
     private AdminNavigation adminNavUI;
+   // private CreateActivityUI createActivityUI;
+    private CreateActivityController createActivityCntl;
     //private LoginController loginCntrl;
+    
+    private ManageActivityController manageActivityCntl;
+    
+    private LoginController loginCntl;
     
     /**
      * Constructor for the Navigation Controller
@@ -24,6 +31,9 @@ public class AdminNavigationController implements ActionListener{
      */
     public AdminNavigationController() {
         adminNavUI = new AdminNavigation(this);
+        adminNavUI.createActivityBtn.addActionListener(this);
+        adminNavUI.manageActivitiesBtn.addActionListener(this);
+        adminNavUI.backBtn.addActionListener(this);
         adminNavUI.setVisible(true);
     }
     
@@ -38,8 +48,17 @@ public class AdminNavigationController implements ActionListener{
     }
 
     @Override
-    public void actionPerformed(ActionEvent arg0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void actionPerformed(ActionEvent e) {
+        Object obj = e.getSource();
+        if (obj == adminNavUI.createActivityBtn) {
+            createActivityCntl = new CreateActivityController();
+            adminNavUI.setVisible(false);
+        } else if (obj == adminNavUI.manageActivitiesBtn) {
+            manageActivityCntl = new ManageActivityController();
+            adminNavUI.setVisible(false);
+        } else if (obj == adminNavUI.backBtn) {
+            loginCntl = new LoginController();
+        }
     }
     
     

@@ -3,7 +3,7 @@ package TestHarness;
 
 import Controller.LoginController;
 import Model.User;
-import View.loginPage;
+import View.LoginPage;
 
 /**
  *
@@ -12,7 +12,7 @@ import View.loginPage;
 public class LoginTestHarness {
         User user = new User();
         LoginController loginCntrl = new LoginController();
-        loginPage loginUI = new loginPage(loginCntrl);
+        LoginPage loginUI = new LoginPage(loginCntrl);
         
         // Package -> Model -> User Test Stubs
         public void UserTests() {
@@ -39,7 +39,7 @@ public class LoginTestHarness {
             System.out.println("  AdminNavigationController.connectUserClient output: " + connectStatus);
         }
         
-        // Package -> View -> loginPage Test Stubs
+        // Package -> View -> LoginPage Test Stubs
         public void LPTestStubs() {
             boolean boolStatus = loginUI.connectedRestServer(loginCntrl);
             System.out.println("  AdminNavigationUI.connectRestServer output: " + boolStatus);

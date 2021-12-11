@@ -219,7 +219,7 @@ public class TicketOrderUI extends javax.swing.JFrame {
         menuItemPrice3 = new javax.swing.JLabel();
         menuItemPrice4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        backBtn = new javax.swing.JButton();
+        menuBtn = new javax.swing.JButton();
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -282,7 +282,7 @@ public class TicketOrderUI extends javax.swing.JFrame {
             .addGap(0, 27, Short.MAX_VALUE)
         );
 
-        backBtn.setText("Back");
+        menuBtn.setText("Menu");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -318,7 +318,7 @@ public class TicketOrderUI extends javax.swing.JFrame {
                         .addGap(68, 68, 68))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(purchaseTixBtn)
                 .addGap(109, 109, 109))
@@ -350,7 +350,7 @@ public class TicketOrderUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(purchaseTixBtn)
-                    .addComponent(backBtn))
+                    .addComponent(menuBtn))
                 .addGap(20, 20, 20))
         );
 
@@ -379,11 +379,11 @@ public class TicketOrderUI extends javax.swing.JFrame {
 
     private javax.swing.JProgressBar progressBar;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton backBtn;
     private javax.swing.JSpinner dayTixAmt;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    public javax.swing.JButton menuBtn;
     private javax.swing.JLabel menuItem1;
     private javax.swing.JLabel menuItem2;
     private javax.swing.JLabel menuItem3;
