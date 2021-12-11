@@ -30,7 +30,7 @@ public class AdminNavigationController implements ActionListener{
      * used to instantiate aspects of the controller
      */
     public AdminNavigationController() {
-        adminNavUI = new AdminNavigation(this);
+        adminNavUI = new AdminNavigation();
         adminNavUI.createActivityBtn.addActionListener(this);
         adminNavUI.manageActivitiesBtn.addActionListener(this);
         adminNavUI.backBtn.addActionListener(this);
