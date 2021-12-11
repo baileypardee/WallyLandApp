@@ -19,7 +19,7 @@ import java.io.FileReader;
  *
  * @author hayde
  */
-public class LoginPage extends javax.swing.JFrame {
+public class loginPage extends javax.swing.JFrame {
 
     private LoginController loginCntrl;
     private NavigationController navCntrl;
@@ -27,21 +27,22 @@ public class LoginPage extends javax.swing.JFrame {
     /**
      * Creates new form viewTickets
      */
-    public LoginPage(LoginController loginCntrl) {
+    public loginPage(LoginController loginCntrl) {
         this.loginCntrl = loginCntrl;
         initComponents();
     }
-    
+
     /**
      * Method to connect to our LoginController
+     *
      * @param loginController a login screen
      * @return the connection status
-     */   
+     */
     public boolean connectedRestServer(LoginController loginController) {
         loginCntrl = loginController;
         return true;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -146,82 +147,79 @@ public class LoginPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-       JSONArray jrr = new JSONArray();
-       JSONParser Jp = new JSONParser();
+        JSONArray jrr = new JSONArray();
+        JSONParser Jp = new JSONParser();
 
-       Object ob = null;
-       
-      
+        Object ob = null;
 
-       
+        try {
+            FileReader file = new FileReader("UserData.json");
+            ob = Jp.parse(file);
+            jrr = (JSONArray) ob;
+            file.close();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error Occured While fetching");
+        }
 
-       try{
-           FileReader file = new FileReader("UserData.json");
-           ob=Jp.parse(file);
-           jrr=(JSONArray) ob;
-           file.close();  
-       } catch(Exception ex){
-           JOptionPane.showMessageDialog(null,"Error Occured While fetching");
-       }
-              
-       JSONObject obj = new JSONObject();
-       int size = jrr.size();
-       obj.put("Email",jTextField1.getText());
-       obj.put("Password", PasswordField1.getText());
-       // obj.put("Password", PasswordField1.getPassword());
+        JSONObject obj = new JSONObject();
+        int size = jrr.size();
+        obj.put("Email", jTextField1.getText());
+        obj.put("Password", PasswordField1.getText());
+        // obj.put("Password", PasswordField1.getPassword());
 
-       jrr.add(obj);
-       
-       for(int i=0; i<size; i++){
-       if(obj.equals(jrr.get(i))){
-           JOptionPane.showMessageDialog(null, "Password Matched");
-            navCntrl = new NavigationController();
-           break;   
-       }else if(i==size-1){
-           JOptionPane.showMessageDialog(null, "Wrong EmailAddress/Password!!");
-           loginCntrl.setAct(false);
-       } 
-      }  // TODO add your handling code here:
+        jrr.add(obj);
+
+        for (int i = 0; i < size; i++) {
+            if (obj.equals(jrr.get(i))) {
+                JOptionPane.showMessageDialog(null, "Password Matched");
+
+//           NavigationUI navigation = new NavigationUI();
+//           //navigation = getNavCntrl().getNavgiationUI();
+//           navigation.setVisible(true);
+                navCntrl = new NavigationController();
+                break;
+            } else if (i == size - 1) {
+                JOptionPane.showMessageDialog(null, "Wrong EmailAddress/Password!!");
+                loginCntrl.setAct(false);
+            }
+        }  // TODO add your handling code here:
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void adminLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminLoginActionPerformed
-        // TODO add your handling code here:
+// TODO add your handling code here:
     }//GEN-LAST:event_adminLoginActionPerformed
 
     private void signUpButtonLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonLActionPerformed
-       JSONObject obj = new JSONObject();
-       JSONArray jrr = new JSONArray();
-       JSONParser jp = new JSONParser();
-       
-        try{
-           FileReader file = new FileReader("UserData.json");
-           jrr=(JSONArray)jp.parse(file);    
-       }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, "Error occured");   
-       } 
+        JSONObject obj = new JSONObject();
+        JSONArray jrr = new JSONArray();
+        JSONParser jp = new JSONParser();
 
-      obj.put("Email",jTextField1.getText());
-      obj.put("Password", PasswordField1.getText());
-      // obj.put("Password", PasswordField1.getPassword());
-      jrr.add(obj);
+        try {
+            FileReader file = new FileReader("UserData.json");
+            jrr = (JSONArray) jp.parse(file);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error occured");
+        }
 
-        
-       //obj.put("FirstName", jTextField2.getText());
-       //obj.put("LastName", jTextField3.getText());
-       //obj.put("Password", PasswordField4.getPassword());
-       
-      
-       try{
-           FileWriter file = new FileWriter("UserData.json");
-           file.write(jrr.toJSONString());
-           file.close();
-       } catch(Exception ex){
-           JOptionPane.showMessageDialog(null, "Error occured");   
-           
-       }
-      
-       JOptionPane.showMessageDialog(null,"Infomation Saved"); // TODO add your handling code here:
-                     
+        obj.put("Email", jTextField1.getText());
+        obj.put("Password", PasswordField1.getText());
+        // obj.put("Password", PasswordField1.getPassword());
+        jrr.add(obj);
+
+        //obj.put("FirstName", jTextField2.getText());
+        //obj.put("LastName", jTextField3.getText());
+        //obj.put("Password", PasswordField4.getPassword());
+        try {
+            FileWriter file = new FileWriter("UserData.json");
+            file.write(jrr.toJSONString());
+            file.close();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error occured");
+
+        }
+
+        JOptionPane.showMessageDialog(null, "Infomation Saved"); // TODO add your handling code here:
+
     }//GEN-LAST:event_signUpButtonLActionPerformed
 
 
@@ -236,4 +234,3 @@ public class LoginPage extends javax.swing.JFrame {
     public javax.swing.JButton signUpButtonL;
     // End of variables declaration//GEN-END:variables
 }
-

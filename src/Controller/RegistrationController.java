@@ -11,49 +11,41 @@ import View.NavigationUI;
 import View.LoginPage;
 import View.RegistrationUI;
 
-
 /**
  *
  * @author felixdadebo
  */
-public class RegistrationController implements ActionListener{
-        
+public class RegistrationController implements ActionListener {
+
     private NavigationController navCntrl;
     private RegistrationController registrationController;
     private RegistrationUI registrationUI;
-    
-     //private RegistrationController loginCntrl;
-    
-  
+
+    //private RegistrationController loginCntrl;
     /**
-     * Constructor for the REgistration Controller
-     * used to instantiate aspects of the controller
+     * Constructor for the REgistration Controller used to instantiate aspects
+     * of the controller
      */
-    public RegistrationController(){
+    public RegistrationController() {
         registrationUI = new RegistrationUI(this);
         registrationUI.SignUp1.addActionListener(this);
         registrationUI.setVisible(true);
-        
-        
+
     }
-    
+
     public boolean connectedUserClient(RegistrationUI navInterface) {
         registrationUI = navInterface;
         return true;
     }
 
-    
-
     @Override
     public void actionPerformed(ActionEvent e) {
-         Object obj = e.getSource();
-        if(obj == registrationUI.SignUp1)
-        {           
+        Object obj = e.getSource();
+        if (obj == registrationUI.SignUp1) {
             navCntrl = new NavigationController();
             registrationUI.setVisible(false);
-       
-    }
-    
-}
-}
 
+        }
+
+    }
+}
