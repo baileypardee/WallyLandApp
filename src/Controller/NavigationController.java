@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class NavigationController implements ActionListener {
     private NavigationUI navigationUI;
     private RestaurantController restCntrl;
-    private CreditCardInputViewController purchaseTicketsCntrl;
+    private TicketsOrderController orderTicketsCntrl;
     private ViewTicketsController viewTicketsCntrl;
     private LoginController loginCntrl;
     
@@ -52,7 +52,7 @@ public class NavigationController implements ActionListener {
         }
         if(obj == navigationUI.purchaseTicketsBtn)
         {
-            purchaseTicketsCntrl = new CreditCardInputViewController(this);
+            orderTicketsCntrl = new TicketsOrderController(this);
             navigationUI.setVisible(false);
         }
         if(obj == navigationUI.viewTicketsBtn)

@@ -1,99 +1,58 @@
 package Controller;
 
-import View.CreditCardInputView;
 import View.TicketOrderUI;
-
+import Model.Ticket;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
- * this will control the purchase gui
+ * this will control the order gui
  * @author hayde
  */
 public class TicketsOrderController implements ActionListener {
-    private TicketOrderUI ticketOrder;
-    private CreditCardInputView purchaseTix;
-    private ViewTicketsController viewTix;
+    private TicketOrderUI ticketOrderUI;
+    private TicketsOrderController orderTix;
+    private ViewTicketsController viewScreen;
+    private Ticket ticket;
+    private CreditCardInputViewController purchaseScreen;
     private NavigationController navCntrl;
 
     public TicketsOrderController() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-       public TicketsOrderController(NavigationController navCntrl) {
+    /**Constructor
+     * 
+     * @param navCntrl 
+     */
+    public TicketsOrderController(NavigationController navCntrl){
         this.navCntrl = navCntrl;
-        purchaseTix = new CreditCardInputView();
-        purchaseTix.myTicketsBuy.addActionListener(this);
-        purchaseTix.submitBuyTickets.addActionListener(this);
-        purchaseTix.setVisible(true);
-        
+        ticket = 
+        ticketOrderUI = new TicketOrderUI();
+        ticketOrderUI.purchaseTixBtn.addActionListener(this);
+        ticketOrderUI.menuBtn.addActionListener(this);
     }
-
-    public TicketOrderUI getTicketOrder() {
-        return ticketOrder;
-    }
-
-    public void setTicketOrder(TicketOrderUI ticketOrder) {
-        this.ticketOrder = ticketOrder;
-    }
-
-    public CreditCardInputView getPurchaseTix() {
-        return purchaseTix;
-    }
-
-    public void setPurchaseTix(CreditCardInputView purchaseTix) {
-        this.purchaseTix = purchaseTix;
-    }
-
-    public NavigationController getNavCntrl() {
-        return navCntrl;
-    }
-
-    public void setNavCntrl(NavigationController navCntrl) {
-        this.navCntrl = navCntrl;
-    }
-    /**
-     * getter for view tickets controller
-     * @return (gets an instance of the view tickets controller)
-     */
-    public ViewTicketsController getViewTix() {
-        return viewTix;
-    }
-
-    /**
-     * setter for view tickets
-     * @param viewTix sets variable of ViewTicketsController type
-     */
-    public void setViewTix(ViewTicketsController viewTix) {
-        this.viewTix = viewTix;
-    }
-    
-    /**
-     * create the purchase tickets gui
-     */
- 
 
     /**
      * Action Events for buttons
      * @param e the command line arguments
      */
     @Override
-    public void actionPerformed(ActionEvent e){
+    public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if(obj == purchaseTix.myTicketsBuy)
+        if(obj == ticketOrderUI.purchaseTixBtn)
         {
-            viewTix = new ViewTicketsController(navCntrl);
-            purchaseTix.setVisible(false);
+            purchaseScreen = new CreditCardInputViewController(navCntrl);
+            ticketOrderUI.setVisible(false);
         }
-        if(obj == purchaseTix.submitBuyTickets)
+        if(obj == ticketOrderUI.menuBtn)
         {
             navCntrl = new NavigationController();
-            purchaseTix.setVisible(false);
+            ticketOrderUI.setVisible(false);
             
         }
-        
     }
 
-    public boolean connectedUserClient(CreditCardInputView purchaseUI) {
+    public boolean connectedUserClient(TicketOrderUI ticketOrderUI) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
