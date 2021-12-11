@@ -8,7 +8,7 @@ package Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import View.NavigationUI;
-import View.loginPage;
+import View.LoginPage;
 import View.RegistrationUI;
 
 /**

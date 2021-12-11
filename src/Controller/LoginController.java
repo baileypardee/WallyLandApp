@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import View.NavigationUI;
 import View.RegistrationUI;
-import View.loginPage;
+import View.LoginPage;
 
 /**
  *
@@ -16,7 +16,7 @@ public class LoginController implements ActionListener {
 
     private NavigationController navCntrl;
     private AdminNavigationController adminNavCntrl;
-    private loginPage loginUI;
+    private LoginPage loginUI;
     private LoginController loginCntrl;
     private RegistrationController registraCntrl;
     private boolean act;
@@ -25,7 +25,7 @@ public class LoginController implements ActionListener {
      * Constructor for login controller
      */
     public LoginController() {
-        loginUI = new loginPage(this);
+        loginUI = new LoginPage(this);
         loginUI.loginButton.addActionListener(this);
         loginUI.adminLogin.addActionListener(this);
         loginUI.signUpButtonL.addActionListener(this);
@@ -40,7 +40,7 @@ public class LoginController implements ActionListener {
      * @param loginInterface a user interface which can view the login
      * @return the connection status
      */    
-    public boolean connectedUserClient(loginPage loginInterface) {
+    public boolean connectedUserClient(LoginPage loginInterface) {
         loginUI = loginInterface;
         return true;
     }

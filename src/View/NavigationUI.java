@@ -54,6 +54,7 @@ public class NavigationUI extends javax.swing.JFrame {
         logoutBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 400));

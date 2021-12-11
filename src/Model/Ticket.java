@@ -10,5 +10,59 @@ package Model;
  * @author Javod Fields
  */
 public class Ticket {
+    private double price;
+    private boolean paid;
+    private int ID;
+    private String startDate;
+    private int daysActive;
 
+    public Ticket(double price, boolean paid, int ID, String startDate, int daysActive) {
+        this.price = price;
+        this.paid = paid;
+        this.ID = ID;
+        this.startDate = startDate;
+        this.daysActive = daysActive;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public boolean isPaid() {
+        return paid;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public int getDaysActive() {
+        return daysActive;
+    }
+
+    public void setDaysActive(int daysActive) {
+        this.daysActive = daysActive;
+    }
+    
+    
 }

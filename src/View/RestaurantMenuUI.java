@@ -6,6 +6,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
 
 /**
  *
@@ -406,6 +408,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
         menuItemPrice6 = new javax.swing.JLabel();
         menuItemPrice7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        backBtn = new javax.swing.JButton();
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -420,6 +423,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(238, 190, 122));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 400));
@@ -440,6 +444,21 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
         menuItem6.setText("Salad");
 
         menuItem7.setText("Soup");
+
+        menuItemAmt1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        menuItemAmt1.setToolTipText("");
+
+        menuItemAmt2.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        menuItemAmt3.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        menuItemAmt4.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        menuItemAmt5.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        menuItemAmt6.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        menuItemAmt7.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         reviewOrderBtn.setText("Review Order");
 
@@ -470,19 +489,16 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
             .addGap(0, 27, Short.MAX_VALUE)
         );
 
+        backBtn.setText("Back");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(menuTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(reviewOrderBtn)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(menuTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -499,16 +515,16 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
                             .addComponent(menuItem5)
                             .addComponent(menuItem6)
                             .addComponent(menuItem7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(menuItemPrice6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(menuItemAmt6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(menuItemPrice7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(menuItemAmt7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(menuItemAmt7, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(menuItemPrice6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(menuItemAmt6, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(menuItemPrice1)
@@ -517,13 +533,19 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
                                     .addComponent(menuItemPrice4)
                                     .addComponent(menuItemPrice5))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(menuItemAmt5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(menuItemAmt4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(menuItemAmt3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(menuItemAmt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(menuItemAmt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(82, 82, 82))))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(menuItemAmt1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                                    .addComponent(menuItemAmt2)
+                                    .addComponent(menuItemAmt3)
+                                    .addComponent(menuItemAmt4)
+                                    .addComponent(menuItemAmt5))))
+                        .addGap(68, 68, 68))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(reviewOrderBtn)
+                .addGap(109, 109, 109))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -531,10 +553,11 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addComponent(menuTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(menuItem1)
-                    .addComponent(menuItemAmt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuItemPrice1))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(menuItemAmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(menuItem1)
+                        .addComponent(menuItemPrice1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(menuItem2)
@@ -568,7 +591,9 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(reviewOrderBtn)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(reviewOrderBtn)
+                    .addComponent(backBtn))
                 .addGap(20, 20, 20))
         );
 
@@ -578,7 +603,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -593,6 +618,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
 
     private javax.swing.JProgressBar progressBar;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton backBtn;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -620,4 +646,4 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
     private javax.swing.JLabel menuTitle;
     public javax.swing.JButton reviewOrderBtn;
     // End of variables declaration//GEN-END:variables
-}
+    }
