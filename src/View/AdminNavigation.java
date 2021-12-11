@@ -134,8 +134,8 @@ public class AdminNavigation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton createActivityBtn;
+    public javax.swing.JButton createActivityBtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton manageActivitiesBtn;
+    public javax.swing.JButton manageActivitiesBtn;
     // End of variables declaration//GEN-END:variables
 }
