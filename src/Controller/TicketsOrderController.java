@@ -7,6 +7,7 @@ import Model.DayTicket;
 import Model.WeekTicket;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 /**
  * this will control the order gui
  * @author hayde
@@ -58,6 +59,28 @@ public class TicketsOrderController implements ActionListener {
         return total;
     }
     
+    public ArrayList<Ticket> generateTickets(Integer dayTixAmt, Integer weekTixAmt, Integer seasonTixAmt){
+        
+        ArrayList<Ticket> orderedTickets = new ArrayList();
+                
+        for(int i = 0; i < dayTixAmt; i++){
+            dayTix = new DayTicket();
+            orderedTickets.add(dayTix);
+        }
+        
+        for(int i = 0; i < weekTixAmt; i++){
+            weekTix = new WeekTicket();
+            orderedTickets.add(weekTix);
+        }
+        
+        for(int i = 0; i < seasonTixAmt; i++){
+            seasonTix = new SeasonTicket();
+            orderedTickets.add(seasonTix);
+        }
+        
+        return orderedTickets;
+    }
+    
     /**
      * Action Events for buttons
      * @param e the command line arguments
@@ -67,7 +90,13 @@ public class TicketsOrderController implements ActionListener {
         Object obj = e.getSource();
         if(obj == ticketOrderUI.purchaseTixBtn)
         {
-            purchaseScreen = new CreditCardInputViewController(navCntrl, this);
+            int dayAmt = (Integer)ticketOrderUI.getDayTixAmt().getValue();
+            int weekAmt = (Integer)ticketOrderUI.getWeekTixAmt().getValue();
+            int seasonAmt = (Integer)ticketOrderUI.getSeasonTixAmt().getValue();
+            
+            ArrayList<Ticket> orderedTicket = generateTickets(dayAmt, weekAmt, seasonAmt);
+            
+            purchaseScreen = new CreditCardInputViewController(navCntrl, this, orderedTicket);
             ticketOrderUI.setVisible(false);
         }
         if(obj == ticketOrderUI.menuBtn)
