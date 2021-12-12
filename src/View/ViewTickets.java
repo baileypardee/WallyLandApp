@@ -6,6 +6,7 @@
 package View;
 
 import Controller.CreditCardInputViewController;
+import javax.swing.JTable;
 
 /**
  *
@@ -20,6 +21,16 @@ public class ViewTickets extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JTable getTicketTable() {
+        return ticketTable;
+    }
+
+    public void setTicketTable(JTable ticketTable) {
+        this.ticketTable = ticketTable;
+    }
+    
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,7 +44,7 @@ public class ViewTickets extends javax.swing.JFrame {
         menuBtn = new javax.swing.JButton();
         purchaseBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        ticketTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,7 +59,7 @@ public class ViewTickets extends javax.swing.JFrame {
 
         purchaseBtn.setText("Purchase");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        ticketTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -59,7 +70,7 @@ public class ViewTickets extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(ticketTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -154,9 +165,9 @@ public class ViewTickets extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     public javax.swing.JButton menuBtn;
     public javax.swing.JButton purchaseBtn;
+    private javax.swing.JTable ticketTable;
     // End of variables declaration//GEN-END:variables
 
     public boolean connectedRestServer(CreditCardInputViewController purCntl) {
