@@ -4,24 +4,28 @@
  * and open the template in the editor.
  */
 package Model;
-
+import java.util.Date;
+import java.util.Calendar;
+import java.util.UUID;
 /**
  *
- * @author Javod Fields
+ * @author Hayden
  */
-public class Ticket {
-    private double price;
-    private boolean paid;
-    private int ID;
-    private String startDate;
-    private int daysActive;
+public abstract class Ticket {
+    protected double price;
+    protected boolean paid = false;
+    protected UUID ID;
+    protected Date startDate = new Date();
+    protected int daysActive;
+    protected Date expDate;
 
-    public Ticket(double price, boolean paid, int ID, String startDate, int daysActive) {
+    public Ticket(double price, boolean paid, UUID ID, Date startDate, int daysActive, Date expDate) {
         this.price = price;
         this.paid = paid;
         this.ID = ID;
         this.startDate = startDate;
         this.daysActive = daysActive;
+        this.expDate = expDate;
     }
 
     public double getPrice() {
@@ -40,19 +44,19 @@ public class Ticket {
         this.paid = paid;
     }
 
-    public int getID() {
+    public UUID getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(UUID ID) {
         this.ID = ID;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
@@ -63,6 +67,5 @@ public class Ticket {
     public void setDaysActive(int daysActive) {
         this.daysActive = daysActive;
     }
-    
-    
+
 }

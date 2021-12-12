@@ -26,7 +26,6 @@ public class TicketsOrderController implements ActionListener {
      */
     public TicketsOrderController(NavigationController navCntrl){
         this.navCntrl = navCntrl;
-        ticket = 
         ticketOrderUI = new TicketOrderUI();
         ticketOrderUI.purchaseTixBtn.addActionListener(this);
         ticketOrderUI.menuBtn.addActionListener(this);

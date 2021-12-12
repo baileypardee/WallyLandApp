@@ -5,14 +5,22 @@
  */
 package Model;
 
+import java.util.Date;
+import java.util.UUID;
+
 /**
  *
  * @author hayde
  */
 public class DayTicket extends Ticket {
+    private double price = 49.99;
+    private int daysActive = 1;
     
-    public DayTicket(double price, boolean paid, int ID, String startDate, int daysActive) {
+    public DayTicket(double price, boolean paid, UUID ID, Date startDate, int daysActive) {
         super(price, paid, ID, startDate, daysActive);
-    }   
+        this.price = price;
+        this.daysActive = daysActive;
+        
+    }
     
 }
