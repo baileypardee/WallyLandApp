@@ -5,12 +5,8 @@
 package Controller;
 
 import View.AdminNavigation;
-import View.CreateActivityUI;
-import View.NavigationUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import View.LoginPage;
-
 
 /**
  *
@@ -22,9 +18,7 @@ public class AdminNavigationController implements ActionListener{
    // private CreateActivityUI createActivityUI;
     private CreateActivityController createActivityCntl;
     //private LoginController loginCntrl;
-    
     private ManageActivityController manageActivityCntl;
-    
     private LoginController loginCntl;
     
     /**

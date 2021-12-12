@@ -240,7 +240,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
                                                 .addComponent(cardNumberValue, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel2)
-                                                .addGap(41, 41, 41)
+                                                .addGap(38, 38, 38)
                                                 .addComponent(orderTotalAmt))
                                             .addComponent(cvvLabel)
                                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))))

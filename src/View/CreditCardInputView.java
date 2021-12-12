@@ -5,20 +5,59 @@
  */
 package View;
 
+import Controller.NavigationController;
 import Controller.ViewTicketsController;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
  * @author hayde
  */
 public class CreditCardInputView extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form viewTickets
      */
     public CreditCardInputView() {
         initComponents();
     }
+
+    public JLabel getTicketOrderTotal() {
+        return ticketOrderTotal;
+    }
+
+    public void setTicketOrderTotal(Double ticketOrderTotal) {
+        this.ticketOrderTotal.setText(String.format("%.2f", ticketOrderTotal));
+    }
+
+    public JTextField getCcvField() {
+        return ccvField;
+    }
+
+    public void setCcvField(JTextField ccvField) {
+        this.ccvField = ccvField;
+    }
+
+    public JTextField getCreditCardField() {
+        return creditCardField;
+    }
+
+    public void setCreditCardField(JTextField creditCardField) {
+        this.creditCardField = creditCardField;
+    }
+
+    public JTextField getExpField() {
+        return expField;
+    }
+
+    public void setExpField(JTextField expField) {
+        this.expField = expField;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,10 +74,13 @@ public class CreditCardInputView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         myTicketsBuy = new javax.swing.JButton();
         submitBuyTickets = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        creditCardField = new javax.swing.JTextField();
+        ccvField = new javax.swing.JTextField();
+        expField = new javax.swing.JTextField();
         menuBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        ticketOrderTotal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,55 +100,78 @@ public class CreditCardInputView extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("Credit Card #");
+        creditCardField.setText("Credit Card #");
 
-        jTextField2.setText("CCV");
+        ccvField.setText("CCV");
 
-        jTextField3.setText("EXP");
+        expField.setText("EXP");
 
         menuBtn.setText("Menu");
+        menuBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Order Total:");
+
+        jLabel3.setText("$");
+
+        ticketOrderTotal.setText("num");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(myTicketsBuy)
-                .addGap(48, 48, 48)
-                .addComponent(menuBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(submitBuyTickets)
-                .addGap(37, 37, 37))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(20, 83, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(130, 130, 130))
+                .addGap(20, 41, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(ccvField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(expField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(creditCardField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ticketOrderTotal)))
+                        .addGap(130, 130, 130))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(myTicketsBuy)
+                        .addGap(40, 40, 40)
+                        .addComponent(menuBtn)
+                        .addGap(36, 36, 36)
+                        .addComponent(submitBuyTickets)
+                        .addGap(76, 76, 76))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(29, 29, 29)
+                .addComponent(creditCardField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                    .addComponent(expField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ccvField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(myTicketsBuy)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(ticketOrderTotal))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(menuBtn)
                     .addComponent(submitBuyTickets)
-                    .addComponent(menuBtn))
-                .addGap(37, 37, 37))
+                    .addComponent(myTicketsBuy))
+                .addContainerGap())
         );
 
         pack();
@@ -117,8 +182,12 @@ public class CreditCardInputView extends javax.swing.JFrame {
     }//GEN-LAST:event_myTicketsBuyActionPerformed
 
     private void submitBuyTicketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBuyTicketsActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_submitBuyTicketsActionPerformed
+
+    private void menuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,13 +291,16 @@ public class CreditCardInputView extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    public javax.swing.JTextField ccvField;
+    public javax.swing.JTextField creditCardField;
+    public javax.swing.JTextField expField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JButton menuBtn;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    public javax.swing.JButton menuBtn;
     public javax.swing.JButton myTicketsBuy;
     public javax.swing.JButton submitBuyTickets;
+    public javax.swing.JLabel ticketOrderTotal;
     // End of variables declaration//GEN-END:variables
 
     public boolean connectedRestServer(ViewTicketsController viewCntl) {

@@ -436,8 +436,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
         menuTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menuTitle.setText("Menu");
 
-        menuItem2.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        menuItem2.setText("Cheeseburger");
+        menuItem2.setText("null");
 
         menuItem3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         menuItem3.setText("Chicken Fingers");

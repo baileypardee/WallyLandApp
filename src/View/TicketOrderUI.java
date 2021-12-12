@@ -2,6 +2,9 @@ package View;
 
 import Controller.TicketsOrderController;
 import Model.Ticket;
+import Model.SeasonTicket;
+import Model.DayTicket;
+import Model.WeekTicket;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -17,14 +20,17 @@ public class TicketOrderUI extends javax.swing.JFrame {
     private TicketsOrderController orderCntrl;
     private Ticket ticket;
     private TicketOrderUI menuUI;
+    private SeasonTicket seasonTix;
+    private DayTicket dayTix;
+    private WeekTicket weekTix;
     /**
      * Creates new form RestaurantMenuUI
      * @param restCntrl references the Restaurant Controller class
      * @param restaurant references the Restaurants class
      */
-    public TicketOrderUI(TicketsOrderController orderCntrl, Ticket ticket) {
+    public TicketOrderUI(TicketsOrderController orderCntrl, SeasonTicket seasonTix, WeekTicket weekTix, DayTicket dayTix){
         this.orderCntrl = orderCntrl;
-        this.ticket = ticket;
+        /*this.ticket = ticket;*/
         initComponents();
         progressBar = new javax.swing.JProgressBar(0, 100);
         jPanel2.add(progressBar);
@@ -43,6 +49,91 @@ public class TicketOrderUI extends javax.swing.JFrame {
         return true;
     }
 
+    /*Getters and setters for Season Ticket price, title, and amount as indicated
+    by the spinner
+    */
+    
+    public JLabel getSeasonTicketItem() {
+        return seasonTicketItem;
+    }
+    public void setSeasonTicketItem(String seasonTicketItem) {
+        this.seasonTicketItem.setText(seasonTicketItem);
+    }
+
+    public JLabel getSeasonTicketPrice() {
+        return seasonTicketPrice;
+    }
+    public void setSeasonTicketPrice(Double seasonTicketPrice){
+        this.seasonTicketPrice.setText(String.format("%.2f", seasonTicketPrice));
+    }
+    public JSpinner getSeasonTixAmt() {
+        return seasonTixAmt;
+    }
+    public void setSeasonTixAmt(JSpinner seasonTixAmt) {
+        this.seasonTixAmt = seasonTixAmt;
+    }
+
+    /*Getters and setters for Week Ticket price, title, and amount as indicated
+    by the spinner
+    */
+    
+    public JLabel getWeekTicketItem() {
+        return weekTicketItem;
+    }
+    public void setWeekTicketItem(String weekTicketItem) {
+        this.weekTicketItem.setText(weekTicketItem);
+    }
+    public JLabel getWeekTicketPrice() {
+        return weekTicketPrice;
+    }
+    public void setWeekTicketPrice(Double weekTicketPrice) {
+        this.weekTicketPrice.setText(String.format("%.2f", weekTicketPrice));
+    }
+    public JSpinner getWeekTixAmt() {
+        return weekTixAmt;
+    }
+    public void setWeekTixAmt(JSpinner weekTixAmt) {
+        this.weekTixAmt = weekTixAmt;
+    }
+    
+    /*Getters and setters for Week Ticket price, title, and amount as indicated
+    by the spinner
+    */
+    
+    public JLabel getDayTicketItem() {
+        return dayTicketItem;
+    }
+    public void setDayTicketItem(String dayTicketItem) {
+        this.dayTicketItem.setText(dayTicketItem);
+    }
+    public JLabel getDayTicketPrice() {
+        return dayTicketPrice;
+    }
+    public void setDayTicketPrice(Double dayTicketPrice) {
+        this.dayTicketPrice.setText(String.format("%.2f", dayTicketPrice));
+    }
+    public JSpinner getDayTixAmt() {
+        return dayTixAmt;
+    }
+    public void setDayTixAmt(JSpinner dayTixAmt) {
+        this.dayTixAmt = dayTixAmt;
+    }
+
+    
+    public JButton getMenuBtn() {
+        return menuBtn;
+    }
+    public void setMenuBtn(JButton menuBtn) {
+        this.menuBtn = menuBtn;
+    }
+    
+    
+    public JLabel getMenuTitle() {
+        return menuTitle;
+    }
+    public void setMenuTitle(JLabel menuTitle) {
+        this.menuTitle = menuTitle;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,16 +148,16 @@ public class TicketOrderUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         menuTitle = new javax.swing.JLabel();
         menuItem1 = new javax.swing.JLabel();
-        menuItem2 = new javax.swing.JLabel();
-        menuItem3 = new javax.swing.JLabel();
-        menuItem4 = new javax.swing.JLabel();
+        dayTicketItem = new javax.swing.JLabel();
+        weekTicketItem = new javax.swing.JLabel();
+        seasonTicketItem = new javax.swing.JLabel();
         dayTixAmt = new javax.swing.JSpinner();
         weekTixAmt = new javax.swing.JSpinner();
         seasonTixAmt = new javax.swing.JSpinner();
         purchaseTixBtn = new javax.swing.JButton();
-        menuItemPrice2 = new javax.swing.JLabel();
-        menuItemPrice3 = new javax.swing.JLabel();
-        menuItemPrice4 = new javax.swing.JLabel();
+        dayTicketPrice = new javax.swing.JLabel();
+        weekTicketPrice = new javax.swing.JLabel();
+        seasonTicketPrice = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         menuBtn = new javax.swing.JButton();
 
@@ -93,11 +184,11 @@ public class TicketOrderUI extends javax.swing.JFrame {
         menuTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menuTitle.setText("Tickets");
 
-        menuItem2.setText("Day Ticket");
+        dayTicketItem.setText("null");
 
-        menuItem3.setText("Weekly Ticket");
+        weekTicketItem.setText("null");
 
-        menuItem4.setText("Season Ticket");
+        seasonTicketItem.setText("null");
 
         dayTixAmt.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
@@ -112,11 +203,11 @@ public class TicketOrderUI extends javax.swing.JFrame {
             }
         });
 
-        menuItemPrice2.setText("5.99");
+        dayTicketPrice.setText("null");
 
-        menuItemPrice3.setText("4.50");
+        weekTicketPrice.setText("null");
 
-        menuItemPrice4.setText("4.00");
+        seasonTicketPrice.setText("null");
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -151,14 +242,14 @@ public class TicketOrderUI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(menuItem1)
-                            .addComponent(menuItem2)
-                            .addComponent(menuItem3)
-                            .addComponent(menuItem4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                            .addComponent(dayTicketItem)
+                            .addComponent(weekTicketItem)
+                            .addComponent(seasonTicketItem))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(menuItemPrice2)
-                            .addComponent(menuItemPrice3)
-                            .addComponent(menuItemPrice4))
+                            .addComponent(dayTicketPrice)
+                            .addComponent(weekTicketPrice)
+                            .addComponent(seasonTicketPrice))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(dayTixAmt, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
@@ -181,19 +272,19 @@ public class TicketOrderUI extends javax.swing.JFrame {
                 .addComponent(menuItem1)
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(menuItem2)
+                    .addComponent(dayTicketItem)
                     .addComponent(dayTixAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuItemPrice2))
+                    .addComponent(dayTicketPrice))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(menuItem3)
+                    .addComponent(weekTicketItem)
                     .addComponent(weekTixAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuItemPrice3))
+                    .addComponent(weekTicketPrice))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(menuItem4)
+                    .addComponent(seasonTicketItem)
                     .addComponent(seasonTixAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuItemPrice4))
+                    .addComponent(seasonTicketPrice))
                 .addGap(93, 93, 93)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
@@ -228,21 +319,21 @@ public class TicketOrderUI extends javax.swing.JFrame {
 
     private javax.swing.JProgressBar progressBar;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel dayTicketItem;
+    private javax.swing.JLabel dayTicketPrice;
     private javax.swing.JSpinner dayTixAmt;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JButton menuBtn;
     private javax.swing.JLabel menuItem1;
-    private javax.swing.JLabel menuItem2;
-    private javax.swing.JLabel menuItem3;
-    private javax.swing.JLabel menuItem4;
-    private javax.swing.JLabel menuItemPrice2;
-    private javax.swing.JLabel menuItemPrice3;
-    private javax.swing.JLabel menuItemPrice4;
     private javax.swing.JLabel menuTitle;
     public javax.swing.JButton purchaseTixBtn;
+    private javax.swing.JLabel seasonTicketItem;
+    private javax.swing.JLabel seasonTicketPrice;
     private javax.swing.JSpinner seasonTixAmt;
+    private javax.swing.JLabel weekTicketItem;
+    private javax.swing.JLabel weekTicketPrice;
     private javax.swing.JSpinner weekTixAmt;
     // End of variables declaration//GEN-END:variables
     }
