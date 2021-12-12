@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
@@ -13,14 +14,21 @@ import java.util.UUID;
  * @author hayde
  */
 public class DayTicket extends Ticket {
-    private double price = 49.99;
-    private int daysActive = 1;
+    private double price;
+    private int daysActive;
+    private LocalDate expDate;
     
-    public DayTicket(double price, boolean paid, UUID ID, Date startDate, int daysActive) {
-        super(price, paid, ID, startDate, daysActive);
+    
+
+    public DayTicket(double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate) {
+        super(price, paid, Id, startDate, daysActive, expDate);
         this.price = price;
+        price = 59.99;
         this.daysActive = daysActive;
-        
+        daysActive = 1;
+        this.expDate = expDate;
+        expDate = startDate.plusDays(daysActive);
     }
+    
     
 }

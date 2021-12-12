@@ -5,7 +5,7 @@
  */
 package Model;
 import java.util.Date;
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.UUID;
 /**
  *
@@ -15,11 +15,11 @@ public abstract class Ticket {
     protected double price;
     protected boolean paid = false;
     protected UUID ID;
-    protected Date startDate = new Date();
+    protected LocalDate startDate = LocalDate.now();
     protected int daysActive;
-    protected Date expDate;
+    protected LocalDate expDate;
 
-    public Ticket(double price, boolean paid, UUID ID, Date startDate, int daysActive, Date expDate) {
+    public Ticket(double price, boolean paid, UUID ID, LocalDate startDate, int daysActive, LocalDate expDate) {
         this.price = price;
         this.paid = paid;
         this.ID = ID;
@@ -52,12 +52,20 @@ public abstract class Ticket {
         this.ID = ID;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
+    }
+
+    public LocalDate getExpDate() {
+        return expDate;
+    }
+
+    public void setExpDate(LocalDate expDate) {
+        this.expDate = expDate;
     }
 
     public int getDaysActive() {
