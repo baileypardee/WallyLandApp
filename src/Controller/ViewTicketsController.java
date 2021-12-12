@@ -52,11 +52,6 @@ public class ViewTicketsController implements ActionListener{//will grab tickets
             orderTicketsController = new TicketsOrderController(navCntrl);
             viewTicketsUI.setVisible(false);
         }
-        else if(obj == viewTicketsUI.menuBtn)
-        {
-            purchaseTicketsCntrl = new CreditCardInputViewController(navCntrl);
-            viewTicketsUI.setVisible(false);
-        }
     }
 
     public boolean connectedUserClient(ViewTickets viewUI) {

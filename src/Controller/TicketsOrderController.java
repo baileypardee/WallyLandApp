@@ -67,7 +67,7 @@ public class TicketsOrderController implements ActionListener {
         Object obj = e.getSource();
         if(obj == ticketOrderUI.purchaseTixBtn)
         {
-            purchaseScreen = new CreditCardInputViewController(navCntrl);
+            purchaseScreen = new CreditCardInputViewController(navCntrl, this);
             ticketOrderUI.setVisible(false);
         }
         if(obj == ticketOrderUI.menuBtn)

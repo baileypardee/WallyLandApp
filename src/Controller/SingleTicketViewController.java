@@ -40,7 +40,7 @@ public class SingleTicketViewController implements ActionListener{//will grab ti
         Object obj = e.getSource();
         if(obj == viewTicketsUI.menuBtn)
         {
-            purchaseTicketsCntrl = new CreditCardInputViewController(navCntrl);
+            navCntrl = new NavigationController();
             viewTicketsUI.setVisible(false);
         }
     }
