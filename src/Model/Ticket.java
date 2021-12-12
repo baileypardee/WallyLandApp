@@ -5,7 +5,7 @@
  */
 package Model;
 import java.util.Date;
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.UUID;
 /**
  *
@@ -14,18 +14,20 @@ import java.util.UUID;
 public abstract class Ticket {
     protected double price;
     protected boolean paid = false;
-    protected UUID ID;
-    protected Date startDate = new Date();
+    protected UUID Id;
+    protected LocalDate startDate = LocalDate.now();
     protected int daysActive;
-    protected Date expDate;
+    protected LocalDate expDate = startDate.plusDays(daysActive);
+    protected String type;
 
-    public Ticket(double price, boolean paid, UUID ID, Date startDate, int daysActive, Date expDate) {
+    public Ticket(double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate, String type) {
         this.price = price;
         this.paid = paid;
-        this.ID = ID;
+        this.Id = Id;
         this.startDate = startDate;
         this.daysActive = daysActive;
         this.expDate = expDate;
+        this.type = type;
     }
 
     public double getPrice() {
@@ -44,20 +46,28 @@ public abstract class Ticket {
         this.paid = paid;
     }
 
-    public UUID getID() {
-        return ID;
+    public UUID getId() {
+        return Id;
     }
 
-    public void setID(UUID ID) {
-        this.ID = ID;
+    public void setId(UUID Id) {
+        this.Id = Id;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
+    }
+
+    public LocalDate getExpDate() {
+        return expDate;
+    }
+
+    public void setExpDate(LocalDate expDate) {
+        this.expDate = expDate;
     }
 
     public int getDaysActive() {
@@ -66,6 +76,14 @@ public abstract class Ticket {
 
     public void setDaysActive(int daysActive) {
         this.daysActive = daysActive;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
 }

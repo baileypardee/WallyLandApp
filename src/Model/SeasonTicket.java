@@ -5,7 +5,7 @@
  */
 package Model;
 import java.util.Date;
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.UUID;
 /**
  *
@@ -14,16 +14,13 @@ import java.util.UUID;
 public class SeasonTicket extends Ticket {
     private double price = 499.99;
     private int daysActive = 80;
-    private Date expDate = 
-    
-    
+    private String type = "Season Ticket";
 
-    public SeasonTicket(double price, boolean paid, UUID ID, Date startDate, int daysActive, Date expDate) {
-        super(price, paid, ID, startDate, daysActive);
+    public SeasonTicket(double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate, String type) {
+        super(price, paid, Id, startDate, daysActive, expDate, type);
         this.price = price;
         this.daysActive = daysActive;
-        
-        
+        this.type = type;
     }
     
  

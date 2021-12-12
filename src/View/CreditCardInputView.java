@@ -226,7 +226,7 @@ public class CreditCardInputView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JButton menuBtn;
+    public javax.swing.JButton menuBtn;
     public javax.swing.JButton myTicketsBuy;
     public javax.swing.JButton submitBuyTickets;
     // End of variables declaration//GEN-END:variables
