@@ -14,18 +14,20 @@ import java.util.UUID;
 public abstract class Ticket {
     protected double price;
     protected boolean paid = false;
-    protected UUID ID;
+    protected UUID Id;
     protected LocalDate startDate = LocalDate.now();
     protected int daysActive;
-    protected LocalDate expDate;
+    protected LocalDate expDate = startDate.plusDays(daysActive);
+    protected String type;
 
-    public Ticket(double price, boolean paid, UUID ID, LocalDate startDate, int daysActive, LocalDate expDate) {
+    public Ticket(double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate, String type) {
         this.price = price;
         this.paid = paid;
-        this.ID = ID;
+        this.Id = Id;
         this.startDate = startDate;
         this.daysActive = daysActive;
         this.expDate = expDate;
+        this.type = type;
     }
 
     public double getPrice() {
@@ -44,12 +46,12 @@ public abstract class Ticket {
         this.paid = paid;
     }
 
-    public UUID getID() {
-        return ID;
+    public UUID getId() {
+        return Id;
     }
 
-    public void setID(UUID ID) {
-        this.ID = ID;
+    public void setId(UUID Id) {
+        this.Id = Id;
     }
 
     public LocalDate getStartDate() {
@@ -74,6 +76,14 @@ public abstract class Ticket {
 
     public void setDaysActive(int daysActive) {
         this.daysActive = daysActive;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
 }

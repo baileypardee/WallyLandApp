@@ -24,6 +24,7 @@ public class CreditCardInputViewController implements ActionListener {
         purchaseTix = new CreditCardInputView();
         purchaseTix.myTicketsBuy.addActionListener(this);
         purchaseTix.submitBuyTickets.addActionListener(this);
+        purchaseTix.menuBtn.addActionListener(this);
         purchaseTix.setVisible(true);
         
     }
@@ -81,7 +82,12 @@ public class CreditCardInputViewController implements ActionListener {
             viewTix = new ViewTicketsController(navCntrl);
             purchaseTix.setVisible(false);
         }
-        if (obj == purchaseTix.submitBuyTickets) {
+        else if (obj == purchaseTix.submitBuyTickets) {
+            navCntrl = new NavigationController();
+            purchaseTix.setVisible(false);
+        }
+        else if(obj == purchaseTix.menuBtn)
+        {
             navCntrl = new NavigationController();
             purchaseTix.setVisible(false);
         }
