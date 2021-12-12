@@ -184,11 +184,11 @@ public class TicketOrderUI extends javax.swing.JFrame {
         menuTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menuTitle.setText("Tickets");
 
-        dayTicketItem.setText("Day Ticket");
+        dayTicketItem.setText("null");
 
-        weekTicketItem.setText("Weekly Ticket");
+        weekTicketItem.setText("null");
 
-        seasonTicketItem.setText("Season Ticket");
+        seasonTicketItem.setText("null");
 
         dayTixAmt.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
@@ -203,11 +203,11 @@ public class TicketOrderUI extends javax.swing.JFrame {
             }
         });
 
-        dayTicketPrice.setText("5.99");
+        dayTicketPrice.setText("null");
 
-        weekTicketPrice.setText("4.50");
+        weekTicketPrice.setText("null");
 
-        seasonTicketPrice.setText("4.00");
+        seasonTicketPrice.setText("null");
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -245,7 +245,7 @@ public class TicketOrderUI extends javax.swing.JFrame {
                             .addComponent(dayTicketItem)
                             .addComponent(weekTicketItem)
                             .addComponent(seasonTicketItem))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(dayTicketPrice)
                             .addComponent(weekTicketPrice)

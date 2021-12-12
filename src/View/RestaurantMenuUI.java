@@ -433,7 +433,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
         menuTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menuTitle.setText("Menu");
 
-        menuItem2.setText("Cheeseburger");
+        menuItem2.setText("null");
 
         menuItem3.setText("Chicken Fingers");
 
@@ -590,7 +590,7 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
                     .addComponent(menuItemPrice7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reviewOrderBtn)
                     .addComponent(backBtn))

@@ -94,7 +94,7 @@
                               <Component id="weekTicketItem" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="seasonTicketItem" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="229" max="32767" attributes="0"/>
+                          <EmptySpace pref="285" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="dayTicketPrice" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="weekTicketPrice" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -173,17 +173,17 @@
         </Component>
         <Component class="javax.swing.JLabel" name="dayTicketItem">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Day Ticket"/>
+            <Property name="text" type="java.lang.String" value="null"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="weekTicketItem">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Weekly Ticket"/>
+            <Property name="text" type="java.lang.String" value="null"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="seasonTicketItem">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Season Ticket"/>
+            <Property name="text" type="java.lang.String" value="null"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSpinner" name="dayTixAmt">
@@ -220,17 +220,17 @@
         </Component>
         <Component class="javax.swing.JLabel" name="dayTicketPrice">
           <Properties>
-            <Property name="text" type="java.lang.String" value="5.99"/>
+            <Property name="text" type="java.lang.String" value="null"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="weekTicketPrice">
           <Properties>
-            <Property name="text" type="java.lang.String" value="4.50"/>
+            <Property name="text" type="java.lang.String" value="null"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="seasonTicketPrice">
           <Properties>
-            <Property name="text" type="java.lang.String" value="4.00"/>
+            <Property name="text" type="java.lang.String" value="null"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">

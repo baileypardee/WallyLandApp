@@ -1,7 +1,6 @@
 package Controller;
 
 import View.CreditCardInputView;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,10 +13,8 @@ public class CreditCardInputViewController implements ActionListener {
     private CreditCardInputView purchaseTix;
     private ViewTicketsController viewTix;
     private NavigationController navCntrl;
-
-    public CreditCardInputViewController() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    private TicketsOrderController ticketOrders;
+    private Double orderTotal;
     
         public CreditCardInputViewController(NavigationController navCntrl) {
         this.navCntrl = navCntrl;
@@ -28,6 +25,9 @@ public class CreditCardInputViewController implements ActionListener {
         purchaseTix.setVisible(true);
         
     }
+        public void setOrderTotal(){
+            purchaseTix.setTicketOrderTotal(ticketOrders.getTicketOrders());
+        }
 
     
     /**
@@ -64,10 +64,6 @@ public class CreditCardInputViewController implements ActionListener {
     public void setViewTix(ViewTicketsController viewTix) {
         this.viewTix = viewTix;
     }
-
-    /**
-     * create the purchase tickets gui
-     */
     
     /**
      * Action Events for buttons

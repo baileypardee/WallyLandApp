@@ -191,7 +191,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="reviewOrderBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="backBtn" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -218,7 +218,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="menuItem2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cheeseburger"/>
+            <Property name="text" type="java.lang.String" value="null"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="menuItem3">
