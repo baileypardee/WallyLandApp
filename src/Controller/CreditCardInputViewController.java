@@ -16,17 +16,23 @@ public class CreditCardInputViewController implements ActionListener {
     private TicketsOrderController ticketOrders;
     private Double orderTotal;
     
-        public CreditCardInputViewController(NavigationController navCntrl) {
+        public CreditCardInputViewController(NavigationController navCntrl, TicketsOrderController ticketOrders) {
         this.navCntrl = navCntrl;
+        this.ticketOrders = ticketOrders;
         purchaseTix = new CreditCardInputView();
         purchaseTix.myTicketsBuy.addActionListener(this);
         purchaseTix.submitBuyTickets.addActionListener(this);
         purchaseTix.menuBtn.addActionListener(this);
         purchaseTix.setVisible(true);
+        System.out.println("pre-order");
+        setOrderTotal();
         
     }
         public void setOrderTotal(){
-            purchaseTix.setTicketOrderTotal(ticketOrders.getTicketOrders());
+            System.out.println("In orderS");
+            double orderTotal = ticketOrders.getTicketOrders();
+            System.out.println(orderTotal);
+            purchaseTix.setTicketOrderTotal(orderTotal);
         }
 
     
