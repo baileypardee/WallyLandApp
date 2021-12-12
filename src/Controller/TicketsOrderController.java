@@ -15,7 +15,6 @@ public class TicketsOrderController implements ActionListener {
     private TicketOrderUI ticketOrderUI;
     private TicketsOrderController orderTix;
     private ViewTicketsController viewScreen;
-    private Ticket ticket;
     private CreditCardInputViewController purchaseScreen;
     private NavigationController navCntrl;
     private SeasonTicket seasonTix;
@@ -28,13 +27,22 @@ public class TicketsOrderController implements ActionListener {
      */
     public TicketsOrderController(NavigationController navCntrl){
         this.navCntrl = navCntrl;
+        seasonTix = new SeasonTicket();
+        dayTix = new DayTicket();
+        weekTix = new WeekTicket();
+                
         ticketOrderUI = new TicketOrderUI(orderTix, seasonTix, weekTix, dayTix);
         ticketOrderUI.purchaseTixBtn.addActionListener(this);
         ticketOrderUI.menuBtn.addActionListener(this);
         ticketOrderUI.setVisible(true);
+        
+        System.out.println("Working");
+        System.out.println(seasonTix.getPrice());
+        setTicketOrderValues();
     }
     
     public void setTicketOrderValues() {
+        System.out.println("Working in method");
         ticketOrderUI.setDayTicketItem(dayTix.getType());
         ticketOrderUI.setWeekTicketItem(weekTix.getType());
         ticketOrderUI.setSeasonTicketItem(seasonTix.getType());
@@ -43,11 +51,11 @@ public class TicketsOrderController implements ActionListener {
         ticketOrderUI.setSeasonTicketPrice(seasonTix.getPrice());
     }
     
-    public String getTicketOrders() {
+    public Double getTicketOrders() {
         double total = Double.parseDouble(ticketOrderUI.getDayTicketPrice().getText()) * (Integer) ticketOrderUI.getDayTixAmt().getValue()
                 + Double.parseDouble(ticketOrderUI.getWeekTicketPrice().getText()) * (Integer) ticketOrderUI.getWeekTixAmt().getValue()
                 + Double.parseDouble(ticketOrderUI.getSeasonTicketPrice().getText()) * (Integer) ticketOrderUI.getSeasonTixAmt().getValue();
-        return String.format("%.2f", total);
+        return total;
     }
     
     /**

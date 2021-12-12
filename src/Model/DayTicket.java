@@ -20,12 +20,45 @@ public class DayTicket extends Ticket {
     
     
 
-    public DayTicket(double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate, String type) {
-        super(price, paid, Id, startDate, daysActive, expDate, type);
+    public DayTicket(/*double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate, String type*/) {
+//        super(price, paid, Id, startDate, daysActive, expDate, type);
+//        this.price = price;
+//        this.daysActive = daysActive;
+//        this.type = type;
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
+    }
+
+    @Override
+    public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public int getDaysActive() {
+        return daysActive;
+    }
+
+    @Override
+    public void setDaysActive(int daysActive) {
         this.daysActive = daysActive;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public void setType(String type) {
         this.type = type;
     }
+    
+
+    
     
     
 }

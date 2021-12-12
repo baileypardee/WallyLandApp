@@ -20,14 +20,14 @@ public abstract class Ticket {
     protected LocalDate expDate = startDate.plusDays(daysActive);
     protected String type;
 
-    public Ticket(double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate, String type) {
-        this.price = price;
-        this.paid = paid;
-        this.Id = Id;
-        this.startDate = startDate;
-        this.daysActive = daysActive;
-        this.expDate = expDate;
-        this.type = type;
+    public Ticket(/*double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate, String type*/) {
+//        this.price = price;
+//        this.paid = paid;
+//        this.Id = Id;
+//        this.startDate = startDate;
+//        this.daysActive = daysActive;
+//        this.expDate = expDate;
+//        this.type = type;
     }
 
     public double getPrice() {
