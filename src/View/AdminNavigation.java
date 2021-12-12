@@ -48,6 +48,7 @@ public class AdminNavigation extends javax.swing.JFrame {
         manageActivitiesBtn = new javax.swing.JButton();
         createActivityBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        backBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,22 +63,30 @@ public class AdminNavigation extends javax.swing.JFrame {
 
         jLabel1.setText("Admin Panel ");
 
+        backBtn.setText("Back");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(131, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(manageActivitiesBtn)
-                        .addGap(110, 110, 110))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(154, 154, 154))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(createActivityBtn)
-                        .addGap(120, 120, 120))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 121, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(manageActivitiesBtn)
+                                .addGap(110, 110, 110))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(154, 154, 154))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(createActivityBtn)
+                                .addGap(120, 120, 120))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backBtn)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,7 +97,9 @@ public class AdminNavigation extends javax.swing.JFrame {
                 .addComponent(manageActivitiesBtn)
                 .addGap(27, 27, 27)
                 .addComponent(createActivityBtn)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addComponent(backBtn)
+                .addContainerGap())
         );
 
         pack();
@@ -134,6 +145,7 @@ public class AdminNavigation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton backBtn;
     public javax.swing.JButton createActivityBtn;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JButton manageActivitiesBtn;

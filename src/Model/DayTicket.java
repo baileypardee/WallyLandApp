@@ -16,7 +16,7 @@ import java.util.UUID;
 public class DayTicket extends Ticket {
     private double price = 59.99;
     private int daysActive = 1;
-    private String type = "DayTicket";
+    private String type = "Day";
     
     
 

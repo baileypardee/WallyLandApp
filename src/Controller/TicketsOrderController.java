@@ -37,13 +37,13 @@ public class TicketsOrderController implements ActionListener {
         ticketOrderUI.menuBtn.addActionListener(this);
         ticketOrderUI.setVisible(true);
         
-        System.out.println("Working");
+        //System.out.println("Working");
         System.out.println(seasonTix.getPrice());
         setTicketOrderValues();
     }
     
     public void setTicketOrderValues() {
-        System.out.println("Working in method");
+       // System.out.println("Working in method");
         ticketOrderUI.setDayTicketItem(dayTix.getType());
         ticketOrderUI.setWeekTicketItem(weekTix.getType());
         ticketOrderUI.setSeasonTicketItem(seasonTix.getType());

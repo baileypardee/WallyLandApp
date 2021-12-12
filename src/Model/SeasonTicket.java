@@ -14,7 +14,7 @@ import java.util.UUID;
 public class SeasonTicket extends Ticket {
     private double price = 499.99;
     private int daysActive = 80;
-    private String type = "Season Ticket";
+    private String type = "Season";
 
     public SeasonTicket(/*double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate, String type*/) {
         //super(price, paid, Id, startDate, daysActive, expDate, type);
