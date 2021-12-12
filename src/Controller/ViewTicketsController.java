@@ -103,12 +103,15 @@ public class ViewTicketsController implements ActionListener{//will grab tickets
             HashMap<String, String>tmpData = (HashMap<String, String>)ticketsToPopulate.get(o);
             Set<String> key = tmpData.keySet();
             Iterator ticketPlace = key.iterator();
+            int i = 0;
             
             while(ticketPlace.hasNext()){
                 String tixKey = (String) ticketPlace.next();
-                String tixVal = (String) ticket
+                String tixVal = (String) tmpData.get(tixKey);
                 
-                tableData[o][i] = 
+                tableData[o][i] = tixVal;
+                ticketPlace.remove();
+                i++;
             }
         }
         
