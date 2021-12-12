@@ -22,9 +22,9 @@ public class TicketOrderUI extends javax.swing.JFrame {
      * @param restCntrl references the Restaurant Controller class
      * @param restaurant references the Restaurants class
      */
-    public TicketOrderUI(TicketsOrderController orderCntrl, Ticket ticket) {
+    public TicketOrderUI(/*TicketsOrderController orderCntrl, Ticket ticket*/) {
         this.orderCntrl = orderCntrl;
-        this.ticket = ticket;
+        /*this.ticket = ticket;*/
         initComponents();
         progressBar = new javax.swing.JProgressBar(0, 100);
         jPanel2.add(progressBar);
